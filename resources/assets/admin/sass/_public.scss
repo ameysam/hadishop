@@ -1,0 +1,27 @@
+.text-smallest {
+    font-size: 60% !important
+}
+.text-smaller {
+    font-size: 70% !important
+}
+.text-small {
+    font-size: 80% !important
+}
+.text-large {
+    font-size: 120% !important
+}
+.text-larger {
+    font-size: 130% !important
+}
+.text-largest {
+    font-size: 140% !important
+}
+
+
+
+
+$color-disable: #dbdbdb;
+.bg-disable {
+    background-color: $color-disable !important;
+    border-color: $color-disable !important;
+}

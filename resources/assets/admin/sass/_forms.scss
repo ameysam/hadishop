@@ -1,0 +1,28 @@
+form {
+    .password-group {
+        text-align: left;
+
+        .password-toggle-icon {
+            position: relative;
+            left: 14px;
+            top: -31px;
+            font-size: 17px;
+            border-right: 1px solid #ced4da;
+            padding-right: 8px;
+            cursor: pointer;
+            height: 30px;
+            text-align: right;
+
+            &:before {
+                top: 7px;
+                position: absolute;
+                left: -6px;
+            }
+        }
+    }
+}
+
+
+// &.has-label{
+//     top: 33px !important;
+// }

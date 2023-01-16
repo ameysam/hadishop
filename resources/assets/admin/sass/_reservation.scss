@@ -1,0 +1,36 @@
+table {
+    &.reservation-table {
+        td{
+            padding: .3rem;
+            font-size: 12px;
+            color: $color-disable;
+            border-color: $color-disable;
+            border-bottom-color: lighten($color-disable, 8);
+            border-right-width: 3px;
+
+            &.number-fa {
+                color: #444;
+            }
+
+            &.disabled,&.reserved {
+                border-right: 3px solid #aaa;
+                border-bottom-color: $color-disable;
+            }
+
+            &.highlighted {
+                background: rgb(215, 219, 239);
+                border-color: rgb(215, 219, 239);
+            }
+        }
+
+        th{
+            padding: .3rem;
+            border-bottom-color: transparent !important
+        }
+    }
+}
+
+
+.modal-content #div-selected-times i {
+    color: #a7bedc;
+}

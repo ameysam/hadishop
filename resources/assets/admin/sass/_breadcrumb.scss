@@ -1,0 +1,22 @@
+.right-panel {
+    .breadcrumbs {
+        .breadcrumbs-inner {
+
+            .breadcrumb {
+
+                li {
+
+                    &.active {
+                        a {
+                            color: #03a9f3;
+                            font-weight: 700;
+                        }
+                    }
+                    a {
+
+                    }
+                }
+            }
+        }
+    }
+}

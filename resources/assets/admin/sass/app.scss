@@ -1,0 +1,36 @@
+$fa-font-path: "../../fonts" !default;
+
+@import "variables";
+
+@import "~normalize.css/normalize";
+
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-v4-rtl/scss/rtl";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+@import "~select2/src/scss/core";
+@import "~select2-theme-bootstrap4/src/build";
+
+@import "~bootstrap-select/sass/bootstrap-select";
+
+@import "~jquery-confirm/css/jquery-confirm.css";
+
+@import '~pretty-checkbox/src/pretty-checkbox';
+
+@import '~font-awesome-animation/dist/font-awesome-animation.min.css';
+
+// @import "~persian-datepicker/dist/css/persian-datepicker.css";
+
+@import "main";
+@import "rtl";
+
+@import 'public';
+@import 'reservation';
+@import 'admin-panel';
+@import 'cards';
+@import 'forms';
+@import 'breadcrumb';
+
