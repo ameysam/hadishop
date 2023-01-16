@@ -21,10 +21,6 @@ class CreateCommentsTable extends Migration
                     ->nullable()
                     ->comment('فرستنده');
 
-            $table->unsignedBigInteger('center_id')
-                    ->nullable()
-                    ->comment('مرکز');
-
             $table->unsignedBigInteger('commentable_id');
 
             $table->string('commentable_type', DBConstant::MARIA_FIELD_STRING_SHORT_LENGTH);
@@ -41,12 +37,6 @@ class CreateCommentsTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('no action');
 
-            $table
-                ->foreign('center_id')
-                ->references('id')
-                ->on('centers')
-                ->onUpdate('cascade')
-                ->onDelete('set null');
         });
     }
 

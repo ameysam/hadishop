@@ -46,26 +46,16 @@
                             return val;
                         }
                     },
-                    {
-                        field: 'type', width: 170, sortable: true, title: 'نوع', align: 'center',
-                        formatter: function (val, row) {
-                            if(row.type == 1)
-                            {
-                                return '<span class="text-success">'+row.type_fa+'</span>';
-                            }
-                            return '<span class="text-primary">'+row.type_fa+'</span>';
-                        }
-                    },
-                    {
-                        field: 'center_id', width: 170, sortable: true, title: 'مرکز', align: 'center',
-                        formatter: function (val, row) {
-                            if(row.center)
-                            {
-                                return row.center.name;
-                            }
-                            return '';
-                        }
-                    },
+                    // {
+                    //     field: 'type', width: 170, sortable: true, title: 'نوع', align: 'center',
+                    //     formatter: function (val, row) {
+                    //         if(row.type == 1)
+                    //         {
+                    //             return '<span class="text-success">'+row.type_fa+'</span>';
+                    //         }
+                    //         return '<span class="text-primary">'+row.type_fa+'</span>';
+                    //     }
+                    // },
                     {
                         field: 'created_at', width: 170, sortable: true, title: 'تاریخ ایجاد', align: 'center',
                         formatter: function (val, row) {
@@ -191,27 +181,7 @@
                         dg.datagrid('doFilter');
                     }
                 },
-            },
-            {
-                field: 'center_id',
-                type: 'combobox',
-                options: {
-                    panelHeight: 'auto',
-                    data: {!! $centers !!},
-                    onChange: function (value) {
-                        if (value == '') {
-                            dg.datagrid('removeFilterRule', 'center_id');
-                        } else {
-                            dg.datagrid('addFilterRule', {
-                                field: 'center_id',
-                                op: 'equal',
-                                value: value
-                            });
-                        }
-                        dg.datagrid('doFilter');
-                    }
-                },
-            },
+            }
         ]);
 
         $(document).find(".datagrid-header-row.datagrid-filter-row td[field='created_at']").each(function (i, val) {

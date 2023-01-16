@@ -16,13 +16,12 @@
     </div>
 @endsection
 
-@section('modal-content')
+{{-- @section('modal-content')
     @component('_components.admin.modal.role-assign-admin-modal')
-        {{-- @slot('action_url_prefix', $route_index) --}}
         @slot('center_id', 'center_id')
         @slot('roles_id', 'roles_id')
     @endcomponent
-@endsection
+@endsection --}}
 
 @push('scripts')
     <script>
@@ -101,12 +100,6 @@
                             }
                             return '<span class="text-danger">' + row.activation_status_farsi + '</span>';
                         }
-                    },
-                    {
-                        field: 'activation_type', width: 110, sortable: true, title: 'فعال سازی', align: 'center',
-                        formatter: function (val, row) {
-                            return '<span class="text-dark">' + row.activation_type_farsi + '</span>';
-                        }
                     }
                 ]
             ],
@@ -149,42 +142,6 @@
                         else {
                             $.messager.alert('توجه', " لطفا یک ردیف انتخاب کنید! ");
                         }
-                    }
-                }, '-',
-                {
-                    id: 'btnRoles',
-                    disabled: true,
-                    text: 'نقش‌ها(چارت سازمانی)',
-                    iconCls: 'fas fa-hand-paper',
-                    handler: function () {
-                        var row = $('#grid1').treegrid('getSelected');
-                        if (row)
-                        {
-                            window.open('{{ $route_index }}/' + row.id + '/roles', '_blank');
-                        }
-                        else
-                        {
-                            $.messager.alert('توجه', " لطفا یک ردیف انتخاب کنید! ");
-                        }
-                    }
-                }, '-',
-                {
-                    id: 'btnAttachRole',
-                    disabled: false,
-                    text: 'تخصیص نقش',
-                    iconCls: 'far fa-hand-paper',
-                    handler: function () {
-                        let ids = [];
-                        let rows = $('#grid1').datagrid('getSelections');
-                        for (let i = 0; i < rows.length; i++)
-                        {
-                            ids.push(rows[i].id);
-                        }
-                        $mdlAssignRole.on('show.bs.modal', function (event) {
-                            $('#roles-users-selected').val(ids.join(','));
-                            $('#center_id').trigger('change');
-                        })
-                        .modal('show');
                     }
                 }, '-',
                 {

@@ -12,20 +12,9 @@ class HomeAdminController extends Controller
     {
         $currentUser = $this->currentUser();
 
-        $centers = Center::whereActive();
-
-        if(! $currentUser->isSuperAdmin())
-        {
-            $centers->whereHas('users', function($query) use ($currentUser){
-                $query->where('users.id', $currentUser->id);
-            });
-        }
-        $centers = $centers->with('type')->withCount('rooms')->get();
-
         $data = [
-            'records' => $centers
+            'records' => []
         ];
-
 
         return view('home.admin', $data);
         // return view('home.calendar');

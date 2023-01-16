@@ -23,20 +23,14 @@ class RoleService extends Service
      * @return array
      * @author M.Alipuor <meysam.alipuor@gmail.com>
      */
-    public function preSave(Request $request, $center = null)
+    public function preSave(Request $request)
     {
-        if($center instanceof Center)
-        {
-            $center = $center->id;
-        }
-
         return [
             'slug' => $request['slug'],
             'name' => isset($center) ? "{$center}-{$request['slug']}" : $request['slug'],
             'title' => $request['title'],
             'type' => $request['type'],
             'permissions' => $request['permissions'],
-            'center_id' => $center ?? null,
             'guard_name' => $request['guard_name'] ?? 'web',
         ];
     }

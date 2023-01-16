@@ -4,9 +4,7 @@ namespace App\Providers;
 
 use App\Http\View\Composers\ComponentProvincesComposer;
 use App\Http\View\Composers\GenderSelectorsComposer;
-use App\Http\View\Composers\GlobalCenterRecordComposer;
 use App\Http\View\Composers\GlobalVariablesComposer;
-use App\Http\View\Composers\RoleAssignAdminComposer;
 use App\Http\View\Composers\SidebarMenuComposer;
 use App\Models\Center;
 use Exception;
@@ -36,10 +34,8 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer('*', GlobalVariablesComposer::class);
         View::composer('_layouts.admin.includes.sidebar', SidebarMenuComposer::class);
-        View::composer('centers.*', GlobalCenterRecordComposer::class);
         View::composer('_components.admin.select.province_cities', ComponentProvincesComposer::class);
         View::composer('_components.admin.select.radio_gender', GenderSelectorsComposer::class);
-        View::composer('_components.admin.modal.role-assign-admin-modal', RoleAssignAdminComposer::class);
 
         Blade::directive('script', function ($expression) {
             return "<?php \$__env->startPush('script_lib'); ?>

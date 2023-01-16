@@ -25,7 +25,7 @@ class CreatePermissionTables extends Migration
         Schema::create($tableNames['permissions'], function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('title_id')->index();
-            $table->unsignedTinyInteger('type')->default(PermissionType::PERMISSION_CENTER)->comment('1:system 2:center');
+            $table->unsignedTinyInteger('type')->default(PermissionType::PERMISSION_SYSTEM)->comment('1:system');
             $table->string('name');
             $table->string('title');
             $table->string('guard_name');
@@ -36,20 +36,12 @@ class CreatePermissionTables extends Migration
 
         Schema::create($tableNames['roles'], function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('center_id')->index()->nullable()->comment('مرکز');
             $table->unsignedTinyInteger('type')->default(RoleType::ROLE_DYNAMIC)->comment('1:dynamic 2:static');
             $table->string('name');
             $table->string('slug')->comment('نامی که کاربر وارد میکند');
             $table->string('title');
             $table->string('guard_name');
             $table->timestamps();
-
-            $table
-                ->foreign('center_id')
-                ->references('id')
-                ->on('centers')
-                ->onUpdate('set null')
-                ->onDelete('set null');
         });
 
         Schema::create($tableNames['model_has_permissions'], function (Blueprint $table) use ($tableNames, $columnNames) {

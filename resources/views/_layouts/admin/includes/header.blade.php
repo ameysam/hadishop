@@ -78,7 +78,7 @@
                     </div>
                 </div> --}}
 
-                <div class="dropdown for-message">
+                {{-- <div class="dropdown for-message">
                     <a href="{{ route('admin.message.index') }}" class="btn btn-secondary dropdown-toggle text-muted" id="btn-message-global">
                         <i class="fa fa-bell"></i>
                         @if($_unseen_messages_count > 0)
@@ -87,7 +87,7 @@
                             <span class="count bg-danger unseen_message_count d-none"></span>
                         @endif
                     </a>
-                </div>
+                </div> --}}
             </div>
             <div class="user-area dropdown float-right">
                 <span>{{ $_current_user->full_name }}</span>

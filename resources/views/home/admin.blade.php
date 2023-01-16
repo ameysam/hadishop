@@ -8,7 +8,7 @@
 </div>
 <br>
 <div class="row">
-    @if($records->isEmpty())
+    {{-- @if($records->isEmpty())
         <div class="col-12 text-center">
             <span class="text-danger">شما به هیچ مرکزی درسترسی ندارید.</span>
         </div>
@@ -29,7 +29,7 @@
                 </div>
             </div>
         @endforeach
-    @endif
+    @endif --}}
 </div>
 
 @push('styles')

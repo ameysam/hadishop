@@ -85,11 +85,6 @@
                             </tr>
 
                             <tr>
-                                <th>مرکز</th>
-                                <td>{{ $record['center']['full_name'] ?? '' }}</td>
-                            </tr>
-
-                            <tr>
                                 <th>تاریخ ایجاد</th>
                                 <td class="number-fa">{{ jdate($record['created_at'])->format('Y/m/d H:i:s') }}</td>
                             </tr>

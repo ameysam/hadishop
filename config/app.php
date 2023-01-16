@@ -181,7 +181,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
-        App\Providers\CenterRecordServiceProvider::class,
         App\Providers\SmsProvider::class,
     ],
 

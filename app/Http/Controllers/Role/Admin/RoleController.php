@@ -85,7 +85,6 @@ class RoleController extends Controller
             'route_items' => route('admin.role.items'),
             'route_index' => route('admin.role.index'),
             'types' => RoleType::toJson(),
-            'centers' => Center::getAllItemsForDropdown(),
         ];
 
         return view('roles.admin.index', $data);
@@ -94,7 +93,7 @@ class RoleController extends Controller
 
     public function items(Grid $grid)
     {
-        $records = CustomRole::with('center');
+        $records = CustomRole::query();
 
         $records = $grid->items($records);
 
@@ -111,7 +110,6 @@ class RoleController extends Controller
     {
         $data = [
             'permissionTitles' => PermissionTitle::all(),
-            'centers' => Center::orderBy('name')->get(),
             'role_types' => RoleType::getValues(),
             'form' => [
                 'method' => 'post',
@@ -127,7 +125,7 @@ class RoleController extends Controller
     {
         return DB::transaction(function () use ($request) {
 
-            $data = $this->roleService->preSave($request, $request['center_id']);
+            $data = $this->roleService->preSave($request);
 
             $this->roleService->createRecord($data);
 
@@ -152,7 +150,6 @@ class RoleController extends Controller
         $data = [
             'record' => $this->record,
             'permissionTitles' => PermissionTitle::all(),
-            'centers' => Center::orderBy('name')->get(),
             'role_types' => RoleType::getValues(),
             'form' => [
                 'method' => 'put',
@@ -168,7 +165,7 @@ class RoleController extends Controller
     {
         return DB::transaction(function () use ($request) {
 
-            $data = $this->roleService->preSave($request, $request['center_id']);
+            $data = $this->roleService->preSave($request);
 
             $this->roleService->updateRecord($this->record, $data);
 

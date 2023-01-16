@@ -15,9 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(ProvincesTableSeeder::class);
-        $this->call(CentersTableSeeder::class);
         $this->call(RolesSeeder::class);
-        $this->call(PostsTableSeeder::class);
-        $this->call(ChartsTableSeeder::class);
+        // $this->call(PostsTableSeeder::class);
     }
 }

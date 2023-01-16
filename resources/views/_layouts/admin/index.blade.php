@@ -27,7 +27,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
-    
+
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/admin/images/favicon/apple-touch-icon.png') }}">
     <link rel="manifest" href="{{ asset('assets/admin/images/favicon/site.webmanifest') }}">
     <link href="{{ asset('assets/admin/css/app.css') }}" rel='stylesheet'>

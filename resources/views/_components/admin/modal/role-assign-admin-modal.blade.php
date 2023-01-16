@@ -12,20 +12,6 @@
             <form id="form1" method="post">
                 <div class="row">
                     <div class="col-sm-12">
-                        @component('_components.admin.select.bootstrap-single')
-                            @slot('title', 'مرکز')
-                            @slot('id', 'center_id')
-                            @slot('search', true)
-                            @slot('star', false)
-                            @slot('default', 'بدون مرکز')
-                            @slot('options')
-                                @foreach ($_centers as $item)
-                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                @endforeach
-                            @endslot
-                        @endcomponent
-                    </div>
-                    <div class="col-sm-12">
                         @component('_components.admin.select.bootstrap-multiple')
                             @slot('title', 'نقش (ها)')
                             @slot('id', 'roles_id')

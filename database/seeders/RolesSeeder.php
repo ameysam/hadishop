@@ -36,137 +36,27 @@ class RolesSeeder extends Seeder
                 ]
             ],
             [
-                'title' => 'مراکز',
+                'title' => 'کالاها',
                 'detail' => [
                     [
-                        'name' => 'center-list',
-                        'title' => 'لیست مراکز'
+                        'name' => 'product-list',
+                        'title' => 'لیست کالاها'
                     ],
                     [
-                        'name' => 'center-add',
-                        'title' => 'افزودن مرکز',
-                        'type' => PermissionType::PERMISSION_SYSTEM,
+                        'name' => 'product-add',
+                        'title' => 'افزودن کالا',
                     ],
                     [
-                        'name' => 'center-show',
-                        'title' => 'مشاهده مرکز'
+                        'name' => 'product-show',
+                        'title' => 'مشاهده کالا'
                     ],
                     [
-                        'name' => 'center-edit',
-                        'title' => 'ویرایش مرکز'
+                        'name' => 'product-edit',
+                        'title' => 'ویرایش کالا'
                     ],
                     [
-                        'name' => 'center-delete',
-                        'title' => 'حذف مرکز',
-                        'type' => PermissionType::PERMISSION_SYSTEM,
-                    ],
-                ]
-            ],
-            [
-                'title' => 'اتاق‌ها',
-                'detail' => [
-                    [
-                        'name' => 'room-list',
-                        'title' => 'لیست اتاق‌ها'
-                    ],
-                    [
-                        'name' => 'room-add',
-                        'title' => 'افزودن اتاق'
-                    ],
-                    [
-                        'name' => 'room-show',
-                        'title' => 'مشاهده اتاق'
-                    ],
-                    [
-                        'name' => 'room-edit',
-                        'title' => 'ویرایش اتاق'
-                    ],
-                    [
-                        'name' => 'room-delete',
-                        'title' => 'حذف اتاق'
-                    ],
-                ]
-            ],
-            [
-                'title' => 'زمان‌بندی ها',
-                'detail' => [
-                    [
-                        'name' => 'schedule-list',
-                        'title' => 'لیست زمان‌بندی ها'
-                    ],
-                    [
-                        'name' => 'schedule-add',
-                        'title' => 'افزودن زمان‌بندی'
-                    ],
-                    [
-                        'name' => 'schedule-show',
-                        'title' => 'مشاهده زمان‌بندی'
-                    ],
-                    [
-                        'name' => 'schedule-edit',
-                        'title' => 'ویرایش زمان‌بندی'
-                    ],
-                    [
-                        'name' => 'schedule-delete',
-                        'title' => 'حذف زمان‌بندی'
-                    ],
-                    [
-                        'name' => 'schedule-assign',
-                        'title' => 'تخصیص زمان‌بندی به اتاق'
-                    ],
-                ]
-            ],
-            [
-                'title' => 'جلسات',
-                'detail' => [
-                    [
-                        'name' => 'meeting-list',
-                        'title' => 'لیست جلسات'
-                    ],
-                    [
-                        'name' => 'meeting-add',
-                        'title' => 'افزودن جلسه'
-                    ],
-                    [
-                        'name' => 'meeting-show',
-                        'title' => 'مشاهده جلسه'
-                    ],
-                    [
-                        'name' => 'meeting-edit',
-                        'title' => 'ویرایش جلسه'
-                    ],
-                    [
-                        'name' => 'meeting-delete',
-                        'title' => 'حذف جلسه'
-                    ],
-                    [
-                        'name' => 'meeting-list-search',
-                        'title' => 'جستجوی جلسه'
-                    ],
-                ]
-            ],
-            [
-                'title' => 'رويدادها',
-                'detail' => [
-                    [
-                        'name' => 'event-list',
-                        'title' => 'لیست رويدادها'
-                    ],
-                    [
-                        'name' => 'event-add',
-                        'title' => 'افزودن رويداد'
-                    ],
-                    [
-                        'name' => 'event-show',
-                        'title' => 'مشاهده رويداد'
-                    ],
-                    [
-                        'name' => 'event-edit',
-                        'title' => 'ویرایش رويداد'
-                    ],
-                    [
-                        'name' => 'event-delete',
-                        'title' => 'حذف رويداد'
+                        'name' => 'product-delete',
+                        'title' => 'حذف کالا',
                     ],
                 ]
             ],
@@ -233,10 +123,10 @@ class RolesSeeder extends Seeder
         $accounts = [
             [
                 'user' => [
-                    'first_name' => 'حامد',
-                    'last_name' => 'رامشینی',
-                    'id_no' => '0072439297',
-                    'mobile_no' => '09194828722',
+                    'first_name' => 'هادی',
+                    'last_name' => 'بختیاری',
+                    'id_no' => '1231231230',
+                    'mobile_no' => '09123456789',
                     'password' => '123456',
                     'email' => 'hamedramshini@gmail.com',
                     'gender' => UserGenderType::USER_GENDER_MALE,
@@ -253,7 +143,7 @@ class RolesSeeder extends Seeder
                 'user' => [
                     'first_name' => 'میثم',
                     'last_name' => 'علیپور',
-                    'id_no' => '3860448821',
+                    'id_no' => '2222222222',
                     'mobile_no' => '09129542531',
                     'password' => '123456',
                     'email' => 'meysam.alipuor@gmail.com',
@@ -293,14 +183,6 @@ class RolesSeeder extends Seeder
                 ],
                 'permissions' => [
                     'panel-show',
-                    'center-show',
-                    'center-list',
-                    'room-show',
-                    'room-list',
-                    'schedule-show',
-                    'schedule-list',
-                    'meeting-show',
-                    'meeting-list',
                 ]
             ],
         ];
@@ -375,139 +257,5 @@ class RolesSeeder extends Seeder
             'mobile_no' => '09120000008',
             'activation_status' => UserActivationStatusType::USER_ACTIVATION_STATUS_ACTIVE,
         ]);
-
-        // $center1 = Center::find(1);
-        // $role1 = Role::create([
-        //     'title' => 'مدیر بیمارستان',
-        //     'name' => $center1->id . '-admin-place',
-        //     'slug' => 'admin-place',
-        //     'center_id' => $center1->id,
-        // ])
-        // ->givePermissionTo([1,2,3,4]);
-
-
-        // $role2 = Role::create([
-        //     'title' => 'مدیر بخش',
-        //     'name' => $center1->id . '-admin-section',
-        //     'slug' => 'admin-section',
-        //     'center_id' => $center1->id,
-        // ]);
-        // $role2->givePermissionTo([1, 4 ,6]);
-
-        // $role3 = Role::create([
-        //     'title' => 'پزشک',
-        //     'name' => $center1->id . '-doctor',
-        //     'slug' => 'doctor',
-        //     'center_id' => $center1->id,
-        // ]);
-        // $role3->givePermissionTo([1, 20, 22]);
-
-        // $role4 = Role::create([
-        //     'title' => 'دستیار پزشک',
-        //     'name' => $center1->id . '-doctor-assistant',
-        //     'slug' => 'doctor-assistant',
-        //     'center_id' => $center1->id,
-        // ]);
-        // $role4->givePermissionTo([1, 15, 19, 21]);
-
-        // $role5 = Role::create([
-        //     'title' => 'پرستار',
-        //     'name' => $center1->id . '-nurse',
-        //     'slug' => 'nurse',
-        //     'center_id' => $center1->id,
-        // ]);
-        // $role5->givePermissionTo([1, 15, 2, 21]);
-
-        // $role6 = Role::create([
-        //     'title' => 'منشی',
-        //     'name' => $center1->id . '-secretary',
-        //     'slug' => 'secretary',
-        //     'center_id' => $center1->id,
-        // ]);
-        // $role6->givePermissionTo([1, 20, 22, 14, 13, 15, 16, 17]);
-
-        // $center2 = Center::find(2);
-        // $role7 = Role::create([
-        //     'title' => 'مدیر کلینیک',
-        //     'name' => $center2->id . '-admin-place',
-        //     'slug' => 'admin-place',
-        //     'center_id' => $center2->id,
-        // ]);
-        // $role7->givePermissionTo([1, 9, 11, 14, 10]);
-
-        // $role8 = Role::create([
-        //     'title' => 'پزشک',
-        //     'name' => $center2->id . '-doctor',
-        //     'slug' => 'doctor',
-        //     'center_id' => $center2->id,
-        // ]);
-        // $role8->givePermissionTo([1, 12, 3, 14, 19, 15, 6, 14]);
-
-        // $role9 = Role::create([
-        //     'title' => 'دستیار پزشک',
-        //     'name' => $center2->id . '-doctor-assistant',
-        //     'slug' => 'doctor-assistant',
-        //     'center_id' => $center2->id,
-        // ]);
-        // $role9->givePermissionTo([1, 3, 5, 19, 22]);
-
-        // $role10 = Role::create([
-        //     'title' => 'پرستار',
-        //     'name' => $center2->id . '-nurse',
-        //     'slug' => 'nurse',
-        //     'center_id' => $center2->id,
-        // ]);
-        // $role10->givePermissionTo([1, 20, 21, 5, 6, 18]);
-
-        // $role11 = Role::create([
-        //     'title' => 'منشی',
-        //     'name' => $center2->id . '-secretary',
-        //     'slug' => 'secretary',
-        //     'center_id' => $center2->id,
-        // ]);
-        // $role11->givePermissionTo([1, 10, 20, 22]);
-
-
-        // $center3 = Center::find(3);
-        // $role12 = Role::create([
-        //     'title' => 'مدیر کلینیک',
-        //     'name' => $center3->id . '-admin-place',
-        //     'slug' => 'admin-place',
-        //     'center_id' => $center3->id,
-        // ]);
-        // $role12->givePermissionTo([1, 20, 8, 18, 14, 19]);
-
-        // $role13 = Role::create([
-        //     'title' => 'پزشک',
-        //     'name' => $center3->id . '-doctor',
-        //     'slug' => 'doctor',
-        //     'center_id' => $center3->id,
-        // ]);
-        // $role13->givePermissionTo([1, 11, 13, 2, 15]);
-
-        // $role14 = Role::create([
-        //     'title' => 'منشی',
-        //     'name' => $center3->id . '-secretary',
-        //     'slug' => 'secretary',
-        //     'center_id' => $center3->id,
-        // ]);
-        // $role14->givePermissionTo([1, 15, 18, 19, 17, 22]);
-
-        // $center4 = Center::find(4);
-        // $role15 = Role::create([
-        //     'title' => 'پزشک',
-        //     'name' => $center4->id . '-doctor',
-        //     'slug' => 'doctor',
-        //     'center_id' => $center4->id,
-        // ]);
-        // $role15->givePermissionTo([1, 15, 16, 17, 19, 21]);
-
-        // $role16 = Role::create([
-        //     'title' => 'منشی',
-        //     'name' => $center4->id . '-secretary',
-        //     'slug' => 'secretary',
-        //     'center_id' => $center4->id,
-        // ]);
-        // $role16->givePermissionTo([1, 6, 3, 4, 16, 18]);
     }
 }

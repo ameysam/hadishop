@@ -31,14 +31,14 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input login-type" type="radio" name="login-by" id="loginByMobile" value="mobile" {{ (old('login-by') == 'mobile') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="loginByMobile">ورود با شناسه موبایل</label>
+                                    <input class="form-check-input login-type" type="radio" name="login-by" id="loginByMobile" value="mobile" {{ (empty(old('login-by')) || old('login-by') == 'mobile') ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="loginByMobile">ورود با شماره موبایل</label>
                                 </div>
                                 </div>
                                 <div class="col">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input login-type" type="radio" name="login-by" id="loginById" value="id" {{ (empty(old('login-by')) || old('login-by') == 'id') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="loginById">ورود با کد ملی (شماره پرسنلی)</label>
+                                    <input class="form-check-input login-type" type="radio" name="login-by" id="loginById" value="id" {{ (old('login-by') == 'id') ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="loginById">ورود با کد ملی</label>
                                 </div>
                             </div>
                         </div>

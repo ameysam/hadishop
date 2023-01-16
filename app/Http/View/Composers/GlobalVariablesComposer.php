@@ -30,14 +30,6 @@ class GlobalVariablesComposer
         if($user)
         {
             $view->with('_current_user', $user);
-
-            $_unseen_messages_count = $this->messageFetchService
-            ->whereReceivers([$user->id])
-            ->whereUnseen()
-            ->prepareQuery()
-            ->count();
-
-            $view->with('_unseen_messages_count', $_unseen_messages_count);
         }
     }
 }

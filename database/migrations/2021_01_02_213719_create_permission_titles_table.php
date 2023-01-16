@@ -20,7 +20,7 @@ class CreatePermissionTitlesTable extends Migration
 
             $table->string('title', DBConstant::MARIA_FIELD_STRING_SHORT_LENGTH);
 
-            $table->unsignedTinyInteger('type')->default(PermissionType::PERMISSION_CENTER)->comment('۱:سیستمی  ۲:مختص مرکز');
+            $table->unsignedTinyInteger('type')->default(PermissionType::PERMISSION_SYSTEM)->comment('۱:سیستمی  ۲:مختص مرکز');
 
             $table->timestamps();
         });

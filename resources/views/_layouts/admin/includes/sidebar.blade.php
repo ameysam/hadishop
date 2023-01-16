@@ -37,7 +37,7 @@
                     @endif
                 @endforeach
 
-                @foreach ($_center_menus as $menu)
+                {{-- @foreach ($_center_menus as $menu)
                     @if($_current_user->isSuperAdmin() || $_current_user->hasap($_center, $menu['permission']))
                         <li class="menu-item-has-children dropdown show" id="menu-{{ $menu['name'] }}">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="side-menu-icon {{ $menu['icon'] }}"></i>{{ $menu['title'] }}</a>
@@ -52,7 +52,7 @@
                             @endisset
                         </li>
                     @endif
-                @endforeach
+                @endforeach --}}
 
 
                 @foreach ($_bottom_menus as $menu)

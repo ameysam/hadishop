@@ -81,19 +81,6 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-sm-12">
-                                @component('_components.admin.select.single')
-                                    @slot('title', "مرکز")
-                                    @slot('id', "center_id")
-                                    @slot('search', true)
-                                    @slot('default', "بدون مرکز")
-                                    @slot('options')
-                                        @foreach($centers as $center)
-                                            <option value="{{ $center->id }}" {{ (isset($record) && $record->center_id == $center->id) ? 'selected' : '' }}>{{ $center->name }}</option>
-                                        @endforeach
-                                    @endslot
-                                @endcomponent
-                            </div>
 
                             <div class="col-sm-12">
                                 @component('_components.admin.input.input')
