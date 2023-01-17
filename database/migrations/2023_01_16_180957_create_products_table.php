@@ -1,5 +1,6 @@
 <?php
 
+use App\Constants\DBConstant;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,11 +21,9 @@ class CreateProductsTable extends Migration
 
             $table->string('name');
 
-            $table->string('image', 1024)->nullable();
+            $table->string('image', DBConstant::MARIA_FIELD_STRING_LARGER_LENGTH)->nullable();
 
-            $table->mediumText('excerpt')->nullable();
-
-            $table->text('note')->nullable();
+            $table->text('description')->nullable();
 
             $table->decimal('price', 12, 0)->default(0);
 
@@ -36,7 +35,7 @@ class CreateProductsTable extends Migration
                 ->references('id')
                 ->on('categories')
                 ->onUpdate('cascade')
-                ->onDelete('set null');
+                ->onDelete('cascade');
         });
     }
 

@@ -15,6 +15,8 @@ use App\Http\Controllers\Room\Admin\RoomScheduleController;
 use App\Http\Controllers\Room\Admin\RoomTimingController;
 use App\Http\Controllers\Schedule\Admin\ScheduleController;
 use App\Http\Controllers\Search\Admin\AutoCompleteSearch;
+use App\Http\Controllers\Category\Admin\CategoryController;
+use App\Http\Controllers\Product\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\Admin\UserController;
 use App\Http\Controllers\User\Admin\UserRoleController;
@@ -54,6 +56,36 @@ Route::prefix('cp')->name('admin.')->group(function (){
         Route::get('{id}/edit', [RoleController::class, 'edit'])->name('edit');
         Route::put('{id}', [RoleController::class, 'update'])->name('update');
         Route::delete('{ids}', [RoleController::class, 'delete'])->name('delete');
+    });
+
+    Route::prefix('categories')->name('category.')->group(function (){
+        Route::get('', [CategoryController::class, 'index'])->name('index');
+        Route::post('items', [CategoryController::class, 'items'])->name('items');
+        Route::get('create', [CategoryController::class, 'create'])->name('create');
+        Route::post('', [CategoryController::class, 'store'])->name('store');
+        Route::get('{id}', [CategoryController::class, 'show'])->name('show');
+        Route::get('{id}/edit', [CategoryController::class, 'edit'])->name('edit');
+        Route::put('{id}', [CategoryController::class, 'update'])->name('update');
+
+        Route::prefix('{ids}')->group(function (){
+            Route::patch('', [CategoryController::class, 'softDelete'])->name('soft');
+            Route::delete('', [CategoryController::class, 'forceDelete'])->name('force');
+        });
+    });
+
+    Route::prefix('products')->name('product.')->group(function (){
+        Route::get('', [ProductController::class, 'index'])->name('index');
+        Route::post('items', [ProductController::class, 'items'])->name('items');
+        Route::get('create', [ProductController::class, 'create'])->name('create');
+        Route::post('', [ProductController::class, 'store'])->name('store');
+        Route::get('{id}', [ProductController::class, 'show'])->name('show');
+        Route::get('{id}/edit', [ProductController::class, 'edit'])->name('edit');
+        Route::put('{id}', [ProductController::class, 'update'])->name('update');
+
+        Route::prefix('{ids}')->group(function (){
+            Route::patch('', [ProductController::class, 'softDelete'])->name('soft');
+            Route::delete('', [ProductController::class, 'forceDelete'])->name('force');
+        });
     });
 
 

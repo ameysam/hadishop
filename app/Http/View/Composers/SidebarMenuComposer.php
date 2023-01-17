@@ -23,7 +23,7 @@ class SidebarMenuComposer
     {
     }
 
-    private function mainMenus($user)
+    private function mainMenus()
     {
         $menu = [];
 
@@ -33,20 +33,30 @@ class SidebarMenuComposer
         $menu[] = [
             'title' => "کاربران",
             'permission' => ['user-show'],
-            'name' => 'roles',
+            'name' => 'users',
             'icon' => 'fas fa-users',
             // 'icon' => 'fas fa-user-circle',
             'link' => route('admin.user.index'),
         ];
 
-        // $menu[] = [
-        //     'title' => "نقش‌ها",
-        //     'permission' => ['role-show'],
-        //     'name' => 'roles',
-        //     'icon' => 'fas fa-handshake',
-        //     // 'icon' => 'fas fa-user-circle',
-        //     'link' => route('admin.role.index'),
-        // ];
+        $menu[] = [
+            'title' => "دسته‌بندی‌ها",
+            'permission' => ['category-show'],
+            'name' => 'category',
+            'icon' => 'fas fa-box',
+            // 'icon' => 'fas fa-user-circle',
+            'link' => route('admin.category.index'),
+        ];
+
+
+        $menu[] = [
+            'title' => "کالاها",
+            'permission' => ['product-show'],
+            'name' => 'product',
+            'icon' => 'fas fa-gift',
+            // 'icon' => 'fas fa-user-circle',
+            'link' => route('admin.product.index'),
+        ];
 
 
 

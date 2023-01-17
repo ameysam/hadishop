@@ -181,7 +181,6 @@ class FileSaveService
             $this->name = Str::random(10) . time() . Str::random(10);
         }
 
-        $center_id = $this->center->id ?? null;
         $fileable_type = $this->fileable_type ?? null;
         $fileable_id = $this->fileable_id ?? null;
         $now = now();
@@ -223,7 +222,6 @@ class FileSaveService
             $records[] = [
                 'user_id' => $this->user->id,
                 'uploader_id' => $this->uploader->id ?? $this->user->id,
-                'center_id' => $center_id,
                 'origin_name' => $original_name,
                 'uploaded_name' => $filename,
                 'type_name' => $mime_type,

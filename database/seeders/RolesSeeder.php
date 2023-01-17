@@ -36,6 +36,31 @@ class RolesSeeder extends Seeder
                 ]
             ],
             [
+                'title' => 'دسته‌بندی‌ها',
+                'detail' => [
+                    [
+                        'name' => 'category-list',
+                        'title' => 'لیست دسته‌بندی‌ها'
+                    ],
+                    [
+                        'name' => 'category-add',
+                        'title' => 'افزودن دسته‌بندی',
+                    ],
+                    [
+                        'name' => 'category-show',
+                        'title' => 'مشاهده دسته‌بندی'
+                    ],
+                    [
+                        'name' => 'category-edit',
+                        'title' => 'ویرایش دسته‌بندی'
+                    ],
+                    [
+                        'name' => 'category-delete',
+                        'title' => 'حذف دسته‌بندی',
+                    ],
+                ]
+            ],
+            [
                 'title' => 'کالاها',
                 'detail' => [
                     [
