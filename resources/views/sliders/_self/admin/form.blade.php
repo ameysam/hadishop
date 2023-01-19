@@ -5,11 +5,11 @@
 
 @section('content')
     @component('_components.admin.page_title')
-        @slot('title', isset($record) ? 'ویرایش کالا' : 'تعریف کالا جدید')
+        @slot('title', isset($record) ? 'ویرایش اسلایدر' : 'تعریف اسلایدر جدید')
         @slot('button_title', 'ثبت')
         @slot('button_route', $form['action'])
-        @slot('location_route', route('admin.product.index'))
-        @slot('back_route', route('admin.product.index'))
+        @slot('location_route', route('admin.slider.index'))
+        @slot('back_route', route('admin.slider.index'))
         @slot('with_assets', true)
         @slot('method', $form['method'] ?? 'post')
     @endcomponent
@@ -27,17 +27,17 @@
                             <div class="col-sm-12">
                                 @component('_components.admin.input.input')
                                     @slot('id', 'name')
-                                    @slot('title', 'نام کالا')
+                                    @slot('title', 'عنوان اسلایدر')
                                     @slot('star', true)
                                     @slot('slot', $record->name ?? '')
                                 @endcomponent
                             </div>
 
                             <div class="col-sm-12">
-                                @component('_components.admin.input.editor')
-                                    @slot('id', 'description')
-                                    @slot('title', 'توضیحات')
-                                    @slot('slot', $record->description ?? '')
+                                @component('_components.admin.input.input')
+                                    @slot('id', 'link')
+                                    @slot('title', 'لینک اسلایدر')
+                                    @slot('slot', $record->link ?? '')
                                 @endcomponent
                             </div>
                         </div>
@@ -46,44 +46,9 @@
             </div>
 
             <div class="col-lg-4">
-                {{-- <div class="card">
-                    <div class="card-body">
-                        <h4 class="box-title mb-3">تصویر</h4>
-                        @component('_components.admin.avatar')
-                            @slot('img_id', 'img_avatar')
-                            @slot('file_name', 'avatar')
-                            @slot('input_name', 'image')
-                            @isset($record)
-                                @slot('img_src', $record->image(8, 8))
-                            @endisset
-                        @endcomponent
-                    </div>
-                </div> --}}
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-sm-12">
-                                @component('_components.admin.input.input')
-                                    @slot('id', 'price')
-                                    @slot('type', 'number')
-                                    @slot('title', 'قیمت')
-                                    @slot('star', true)
-                                    @slot('slot', $record->price ?? '')
-                                @endcomponent
-                            </div>
-                            <div class="col-12">
-                                @component('_components.admin.select.single')
-                                    @slot('title', 'دسته‌بندی')
-                                    @slot('id', 'category_id')
-                                    @slot('search', true)
-                                    @slot('star', true)
-                                    @slot('options')
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}" {{ (isset($record) && $record->category_id == $category->id) ? 'selected="selected"' : '' }}>{{ $category->name }}</option>
-                                        @endforeach
-                                    @endslot
-                                @endcomponent
-                            </div>
                             <div class="col-12">
                                 <div class="col-md-4">
                                     <label for="file">تصویر</label>

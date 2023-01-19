@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProvincesTableSeeder::class);
         $this->call(RolesSeeder::class);
         $this->call(ProductTableSeeder::class);
+        $this->call(SlidersTableSeeder::class);
         // $this->call(PostsTableSeeder::class);
     }
 }

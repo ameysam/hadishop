@@ -25,16 +25,12 @@
 
                         <tbody>
                             <tr>
-                                <th class="text-center">نام</th>
+                                <th class="text-center">عنوان</th>
                                 <td class="text-center">{{ $record['name'] }}</td>
                             </tr>
                             <tr>
                                 <th class="text-center">تاریخ ثبت</th>
                                 <td class="text-center number-fa" dir="ltr">{{ jdate($record->created_at)->format('Y/m/d H:i:s') }}</td>
-                            </tr>
-                            <tr>
-                                <th class="text-center">توضیحات</th>
-                                <td class="text-left">{!! nl2br($record['description']) !!}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -56,14 +52,14 @@
                         </thead>
 
                         <tbody>
+                            @if($record['link'])
                             <tr>
-                                <th class="text-center">قیمت</th>
-                                <td class="text-center">{{ number_format($record['price']) ?? '' }}</td>
+                                <th class="text-center">لینک</th>
+                                <td class="text-center">
+                                    <a target="blank" href="{{$record['link'] ?? '#'}}">مشاهده لینک</a>
+                                </td>
                             </tr>
-                            <tr>
-                                <th class="text-center">دسته‌بندی</th>
-                                <td class="text-center">{{ $record['category']['name'] ?? '' }}</td>
-                            </tr>
+                            @endif
                             @if ($record['file'])
                                 <tr>
                                     <th>تصویر</th>
@@ -75,14 +71,5 @@
                 </div>
             </div>
         </div>
-
-        {{-- <div class="col-lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="box-title mb-2">آواتار</h4>
-                    <img src="{{ $record->image ? asset("storage/{$record->image}") : '' }}" width="100%" class="img-thumbnail rounded mx-auto d-block" alt="">
-                </div>
-            </div>
-        </div> --}}
     </div>
 @endsection

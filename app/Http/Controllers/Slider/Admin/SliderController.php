@@ -1,33 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Product\Admin;
+namespace App\Http\Controllers\Slider\Admin;
 
 use App\Constants\Types\File\FileReasonType;
 use App\Constants\Types\File\FileVisibilityType;
-use App\Constants\Types\User\UserActivationStatusType;
-use App\Constants\Types\User\UserActivationType;
-use App\Constants\Types\User\UserGenderType;
-use App\Constants\Types\User\UserRegisterStatusType;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Product\ProductAdminRequest;
-use App\Http\Requests\User\UserAdminRequest;
+use App\Http\Requests\Slider\SliderAdminRequest;
 use App\Http\Responses\SuccessResponse;
-use App\Models\Category;
-use App\Models\Center;
-use App\Models\CustomRole;
-use App\Models\Product;
-use App\Models\User;
-use App\Services\Center\Admin\CenterService;
+use App\Models\Slider;
 use App\Services\File\Src\FileSaveService;
 use App\Services\Grid\Grid;
-use App\Services\Province\Admin\ProvinceService;
-use App\Services\User\Admin\UserService;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class ProductController extends Controller
+class SliderController extends Controller
 {
     /**
      * @var int
@@ -40,7 +26,7 @@ class ProductController extends Controller
     private $ids;
 
     /**
-     * @var Product
+     * @var Slider
      */
     private $record;
 
@@ -48,7 +34,7 @@ class ProductController extends Controller
     {
         if($this->id = Router::getParam('id'))
         {
-            $this->record = Product::with('files')->findOrFail($this->id);
+            $this->record = Slider::with('files')->findOrFail($this->id);
         }
         if($ids = Router::getParam('ids'))
         {
@@ -61,23 +47,21 @@ class ProductController extends Controller
     public function index()
     {
         $data = [
-            'route_items' => route('admin.product.items'),
-            'route_index' => route('admin.product.index'),
-            'categories' => Category::getAllItemsForDropdown(),
+            'route_items' => route('admin.slider.items'),
+            'route_index' => route('admin.slider.index'),
         ];
 
-        return view('products._self.admin.index', $data);
+        return view('sliders._self.admin.index', $data);
     }
 
 
     public function items(Grid $grid)
     {
-        $records = Product::with('category');
+        $records = Slider::query();
 
         $records = $grid->items($records);
 
         $records['rows'] = $records['rows']->each(function ($item) {
-            $item->price_fa = number_format($item->price);
             $item->created_at_farsi = jdate($item->created_at)->format('Y/m/d');
         });
 
@@ -90,20 +74,19 @@ class ProductController extends Controller
         $data = [
             'form' => [
                 'method' => 'post',
-                'action' => route('admin.product.store'),
+                'action' => route('admin.slider.store'),
             ],
-            'categories' => Category::get(),
         ];
 
-        return view('products._self.admin.form', $data);
+        return view('sliders._self.admin.form', $data);
     }
 
 
-    public function store(ProductAdminRequest $request, FileSaveService $fileSaveService)
+    public function store(SliderAdminRequest $request, FileSaveService $fileSaveService)
     {
         return DB::transaction(function () use ($request, $fileSaveService) {
 
-            $record = Product::create($request->all());
+            $record = Slider::create($request->all());
 
             # Upload append files.
             if($request->hasFile('file'))
@@ -127,35 +110,39 @@ class ProductController extends Controller
 
     public function show()
     {
-        // if(!empty($this->record->files[0]))
-        // {
-        //     $this->record->file = $this->record->files[0];
-        // }
+        if(!empty($this->record->files[0]))
+        {
+            $this->record->file = $this->record->files[0];
+        }
 
         $data = [
             'record' => $this->record,
         ];
 
-        return view('products._self.admin.show', $data);
+        return view('sliders._self.admin.show', $data);
     }
 
 
     public function edit()
     {
+        if(!empty($this->record->files[0]))
+        {
+            $this->record->file = $this->record->files[0];
+        }
+
         $data = [
             'record' => $this->record,
             'form' => [
                 'method' => 'put',
-                'action' => route('admin.product.update', $this->id),
+                'action' => route('admin.slider.update', $this->id),
             ],
-            'categories' => Category::get(),
         ];
 
-        return view('products._self.admin.form', $data);
+        return view('sliders._self.admin.form', $data);
     }
 
 
-    public function update(ProductAdminRequest $request, FileSaveService $fileSaveService)
+    public function update(SliderAdminRequest $request, FileSaveService $fileSaveService)
     {
         return DB::transaction(function () use ($request, $fileSaveService) {
 
@@ -187,17 +174,9 @@ class ProductController extends Controller
     }
 
 
-    public function softDelete()
-    {
-        Product::withTrashed()->whereIn('id', $this->ids)->delete();
-
-        return new SuccessResponse('ok');
-    }
-
-
     public function forceDelete()
     {
-        Product::withTrashed()->whereIn('id', $this->ids)->forceDelete();
+        Slider::whereIn('id', $this->ids)->delete();
 
         return new SuccessResponse('ok');
     }
@@ -212,12 +191,12 @@ class ProductController extends Controller
 
         $breadcrumb = [
             [
-                'title' => 'کالاها',
+                'title' => 'اسلایدرها',
                 'link' => '#',
             ],
             [
-                'title' => 'فهرست کالاها',
-                'link' => route('admin.product.index'),
+                'title' => 'فهرست اسلایدرها',
+                'link' => route('admin.slider.index'),
             ],
         ];
 
@@ -225,29 +204,29 @@ class ProductController extends Controller
         {
             $breadcrumb[] =
                 [
-                    'title' => 'تعریف کالا جدید',
-                    'link' => route('admin.product.create'),
+                    'title' => 'تعریف اسلایدر جدید',
+                    'link' => route('admin.slider.create'),
                 ];
         }
         else if($action == 'show')
         {
             $breadcrumb[] =
                 [
-                    'title' => $this->record->name ? $this->record->name : 'مشاهده کالا',
-                    'link' => route('admin.product.show', $this->record->id),
+                    'title' => $this->record->name ? $this->record->name : 'مشاهده اسلایدر',
+                    'link' => route('admin.slider.show', $this->record->id),
                 ];
         }
         else if($action == 'edit')
         {
             $breadcrumb[] =
                 [
-                    'title' => $this->record->name ? $this->record->name : 'مشاهده کالا',
-                    'link' => route('admin.product.show', $this->record->id),
+                    'title' => $this->record->name ? $this->record->name : 'مشاهده اسلایدر',
+                    'link' => route('admin.slider.show', $this->record->id),
                 ];
             $breadcrumb[] =
                 [
                     'title' => 'ویرایش',
-                    'link' => route('admin.product.edit', $this->record->id),
+                    'link' => route('admin.slider.edit', $this->record->id),
                 ];
         }
         $this->setBreadcrumb($breadcrumb);

@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Traits\Product;
+namespace App\Traits\Slider;
 
 
 /**
- * Trait ProductAccessorTrait
+ * Trait SliderAccessorTrait
  */
-trait ProductAccessorTrait
+trait SliderAccessorTrait
 {
     public function getFileAttribute()
     {

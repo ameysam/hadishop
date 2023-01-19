@@ -1,22 +1,13 @@
 <?php
 
 use App\Http\Controllers\Cedar\Admin\CedarController;
-use App\Http\Controllers\Center\Admin\CenterController;
-use App\Http\Controllers\Center\Admin\CenterMemberController;
-use App\Http\Controllers\Center\Role\Admin\RoleController as AdminRoleController;
 use App\Http\Controllers\Comment\Admin\CommentController;
-use App\Http\Controllers\Event\Admin\EventController;
 use App\Http\Controllers\Home\HomeAdminController;
-use App\Http\Controllers\Meeting\Admin\MeetingController;
-use App\Http\Controllers\Message\Admin\MessageController;
 use App\Http\Controllers\Role\Admin\RoleController;
-use App\Http\Controllers\Room\Admin\RoomController;
-use App\Http\Controllers\Room\Admin\RoomScheduleController;
-use App\Http\Controllers\Room\Admin\RoomTimingController;
-use App\Http\Controllers\Schedule\Admin\ScheduleController;
 use App\Http\Controllers\Search\Admin\AutoCompleteSearch;
 use App\Http\Controllers\Category\Admin\CategoryController;
 use App\Http\Controllers\Product\Admin\ProductController;
+use App\Http\Controllers\Slider\Admin\SliderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\Admin\UserController;
 use App\Http\Controllers\User\Admin\UserRoleController;
@@ -85,6 +76,20 @@ Route::prefix('cp')->name('admin.')->group(function (){
         Route::prefix('{ids}')->group(function (){
             Route::patch('', [ProductController::class, 'softDelete'])->name('soft');
             Route::delete('', [ProductController::class, 'forceDelete'])->name('force');
+        });
+    });
+
+    Route::prefix('sliders')->name('slider.')->group(function (){
+        Route::get('', [SliderController::class, 'index'])->name('index');
+        Route::post('items', [SliderController::class, 'items'])->name('items');
+        Route::get('create', [SliderController::class, 'create'])->name('create');
+        Route::post('', [SliderController::class, 'store'])->name('store');
+        Route::get('{id}', [SliderController::class, 'show'])->name('show');
+        Route::get('{id}/edit', [SliderController::class, 'edit'])->name('edit');
+        Route::put('{id}', [SliderController::class, 'update'])->name('update');
+
+        Route::prefix('{ids}')->group(function (){
+            Route::delete('', [SliderController::class, 'forceDelete'])->name('force');
         });
     });
 

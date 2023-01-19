@@ -86,6 +86,31 @@ class RolesSeeder extends Seeder
                 ]
             ],
             [
+                'title' => 'اسلایدرها',
+                'detail' => [
+                    [
+                        'name' => 'slider-list',
+                        'title' => 'لیست اسلایدرها'
+                    ],
+                    [
+                        'name' => 'slider-add',
+                        'title' => 'افزودن اسلایدر',
+                    ],
+                    [
+                        'name' => 'slider-show',
+                        'title' => 'مشاهده اسلایدر'
+                    ],
+                    [
+                        'name' => 'slider-edit',
+                        'title' => 'ویرایش اسلایدر'
+                    ],
+                    [
+                        'name' => 'slider-delete',
+                        'title' => 'حذف اسلایدر',
+                    ],
+                ]
+            ],
+            [
                 'title' => 'نقش‌ها',
                 'detail' => [
                     [

@@ -32,21 +32,18 @@ class ProductTableSeeder extends Seeder
             [
                 'category_id' => rand(1, count($categories)),
                 'name' => 'لیاسشویی بوش',
-                'image' => '',
                 'description' => 'این کالا خیلی خفن و خوبه',
                 'price' => 12000000,
             ],
             [
                 'category_id' => rand(1, count($categories)),
                 'name' => 'لیاسشویی سامسونگ',
-                'image' => '',
                 'description' => 'این کالا خیلی خفن و خوبه',
                 'price' => 2500000,
             ],
             [
                 'category_id' => rand(1, count($categories)),
                 'name' => 'یخچال دوو',
-                'image' => '',
                 'description' => 'این کالا خیلی خفن و خوبه',
                 'price' => 3600000,
             ],

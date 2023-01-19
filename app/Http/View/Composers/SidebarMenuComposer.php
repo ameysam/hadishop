@@ -58,6 +58,15 @@ class SidebarMenuComposer
             'link' => route('admin.product.index'),
         ];
 
+        $menu[] = [
+            'title' => "اسلایدرها",
+            'permission' => ['slider-show'],
+            'name' => 'slider',
+            'icon' => 'fas fa-cube',
+            // 'icon' => 'fas fa-user-circle',
+            'link' => route('admin.slider.index'),
+        ];
+
 
 
         // $menu[] = [

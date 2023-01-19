@@ -21,8 +21,6 @@ class CreateProductsTable extends Migration
 
             $table->string('name');
 
-            $table->string('image', DBConstant::MARIA_FIELD_STRING_LARGER_LENGTH)->nullable();
-
             $table->text('description')->nullable();
 
             $table->decimal('price', 12, 0)->default(0);
