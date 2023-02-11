@@ -19,7 +19,7 @@
             <div id="form-errors" class="col-lg-12 d-none">
 
             </div>
-            <div class="col-lg-12">
+            <div class="col-8">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -30,6 +30,30 @@
                                     @slot('star', true)
                                     @slot('slot', $record->name ?? '')
                                 @endcomponent
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="col-md-4">
+                                    <label for="file">تصویر</label>
+                                    <input type="file" id="file" name="file" accept="image/png, image/jpeg">
+                                </div>
+
+                                @if(isset($record) && $record->file)
+                                    <div class="col-md-4">
+                                        <div>
+                                            <i data-input-name="delete_photo" title="حذف" class="fas fa-times remove-thumb-icon bg-danger rounded cursor-pointer position-absolute p-1"></i>
+                                            <img src="{{ $record->file_path }}" alt="" class="img-thumbnail"  width="125px">
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

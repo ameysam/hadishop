@@ -28,6 +28,12 @@
                                 <th class="text-center">نام</th>
                                 <td class="text-center">{{ $record['name'] }}</td>
                             </tr>
+                            @if ($record['file'])
+                                <tr>
+                                    <th class="text-center">تصویر</th>
+                                    <td><img style="width: 200px" class="img-thumbnail rounded" src="{{ $record->file_path }}" alt=""></td>
+                                </tr>
+                            @endif
 
                             <tr>
                                 <th class="text-center">تاریخ ثبت نام</th>
