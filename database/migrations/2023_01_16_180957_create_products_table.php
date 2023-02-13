@@ -25,6 +25,10 @@ class CreateProductsTable extends Migration
 
             $table->decimal('price', 12, 0)->default(0);
 
+            $table->tinyInteger('special')->default(0);
+
+            $table->tinyInteger('suggest')->default(0);
+
             $table->timestamps();
             $table->softDeletes();
 

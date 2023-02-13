@@ -8,4 +8,9 @@ namespace App\Traits\Product;
  */
 trait ProductScopeTrait
 {
+
+    public function scopeWhereSuggest($query)
+    {
+        return $query->where('suggest', 1);
+    }
 }

@@ -64,6 +64,14 @@
                                 <th class="text-center">دسته‌بندی</th>
                                 <td class="text-center">{{ $record['category']['name'] ?? '' }}</td>
                             </tr>
+                            <tr>
+                                <th class="text-center">وضعیت ویژه</th>
+                                <td class="text-center">{{ $record->special_fa ?? '' }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">وضعیت پیشنهاد</th>
+                                <td class="text-center">{{ $record->suggest_fa ?? '' }}</td>
+                            </tr>
                             @if ($record['file'])
                                 <tr>
                                     <th>تصویر</th>

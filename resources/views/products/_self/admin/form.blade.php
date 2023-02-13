@@ -85,6 +85,28 @@
                                 @endcomponent
                             </div>
                             <div class="col-12">
+                                @component('_components.admin.select.single')
+                                    @slot('title', 'وضعیت ویژه')
+                                    @slot('id', 'special')
+                                    @slot('star', true)
+                                    @slot('options')
+                                        <option value="0" {{ (isset($record) && $record->special !== 1) ? 'selected="selected"' : '' }}>معمولی</option>
+                                        <option value="1" {{ (isset($record) && $record->special === 1) ? 'selected="selected"' : '' }}>ویژه</option>
+                                    @endslot
+                                @endcomponent
+                            </div>
+                            <div class="col-12">
+                                @component('_components.admin.select.single')
+                                    @slot('title', 'وضعیت پیشنهاد')
+                                    @slot('id', 'suggest')
+                                    @slot('star', true)
+                                    @slot('options')
+                                        <option value="0" {{ (isset($record) && $record->suggest !== 1) ? 'selected="selected"' : '' }}>پیشنهاد نشده</option>
+                                        <option value="1" {{ (isset($record) && $record->suggest === 1) ? 'selected="selected"' : '' }}>پیشنهاد شده</option>
+                                    @endslot
+                                @endcomponent
+                            </div>
+                            <div class="col-12">
                                 <div class="col-md-4">
                                     <label for="file">تصویر</label>
                                     <input type="file" id="file" name="file" accept="image/png, image/jpeg">

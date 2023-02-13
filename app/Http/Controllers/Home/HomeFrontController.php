@@ -17,7 +17,11 @@ class HomeFrontController extends Controller
 
         $sliders = Slider::get();
         // return
-        $products = Product::with('category', 'files')->latest('id')->take(10)->get();
+        $products = Product::with('category', 'files')->latest('id')->get();
+
+        $products_latest = Product::with('category', 'files')->latest('id')->take(10)->get();
+
+        $products_suggest = Product::with('category', 'files')->whereSuggest()->latest('id')->take(8)->get();
 
         // return
         $categories = Category::with([
@@ -32,6 +36,8 @@ class HomeFrontController extends Controller
         $data = [
             'sliders' => $sliders,
             'products' => $products,
+            'products_suggest' => $products_suggest,
+            'products_latest' => $products_latest,
             'categories' => $categories,
         ];
         return view('home.front', $data);

@@ -29,4 +29,24 @@ trait ProductAccessorTrait
         }
         return $result;
     }
+
+    public function getSpecialFaAttribute()
+    {
+        $value = 'معمولی';
+        if($this->special === 1)
+        {
+            $value = 'ویژه';
+        }
+        return $value;
+    }
+
+    public function getSuggestFaAttribute()
+    {
+        $value = '';
+        if($this->suggest === 1)
+        {
+            $value = 'پیشنهاد شده';
+        }
+        return $value;
+    }
 }

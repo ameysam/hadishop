@@ -63,6 +63,26 @@
                             return '<span dir="ltr" class="number-fa">فاقد دسته‌بندی</span>';
                         }
                     },
+                    {
+                        field: 'special', width: 100, sortable: true, title: 'ویژه', align: 'center',
+                        formatter: function (val, row) {
+                            if(row.special == 1)
+                            {
+                                return '<span class="text-success">'+row.special_farsi+'</span>';
+                            }
+                            return '<span class="text-danger">'+row.special_farsi+'</span>';
+                        }
+                    },
+                    {
+                        field: 'suggest', width: 100, sortable: true, title: 'پیشنهاد شده', align: 'center',
+                        formatter: function (val, row) {
+                            if(row.suggest == 1)
+                            {
+                                return '<span class="text-success">'+row.suggest_farsi+'</span>';
+                            }
+                            return '';
+                        }
+                    },
                 ]
             ],
             toolbar: [

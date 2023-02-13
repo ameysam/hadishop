@@ -474,7 +474,7 @@
         </div><!-- End .cta -->
     </div><!-- End .container -->
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="heading text-center mb-3">
             <h2 class="title text-center">پیشنهاد و تخفیف</h2><!-- End .title -->
             <p class="title-desc text-center">پیشنهادهای شگفت انگیز امروز</p><!-- End .title-desc -->
@@ -537,9 +537,9 @@
         <div class="more-container text-center mt-1 mb-5">
             <a href="#" class="btn btn-outline-dark-2 btn-round btn-more"><span>مشاهده تخفیف های بیشتر</span><i class="icon-long-arrow-left"></i></a>
         </div><!-- End .more-container -->
-    </div><!-- End .container -->
+    </div><!-- End .container --> --}}
 
-    <div class="container">
+    {{-- <div class="container">
         <hr class="mb-0">
         <div class="owl-carousel mt-5 mb-5 owl-simple owl-rtl owl-loaded owl-drag" data-toggle="owl" data-owl-options="{
                 &quot;nav&quot;: false,
@@ -589,26 +589,26 @@
             </a></div><div class="owl-item active" style="width: 169.667px; margin-left: 30px;"><a href="#" class="brand">
                 <img src="{{ asset('assets/front/6_002.png')}}" alt="نام برند">
             </a></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .owl-carousel -->
-    </div><!-- End .container -->
+    </div><!-- End .container --> --}}
 
     <div class="bg-light pt-5 pb-6">
         <div class="container trending-products">
             <div class="heading heading-flex mb-3">
                 <div class="heading-left">
-                    <h2 class="title">محصولات برتر</h2><!-- End .title -->
+                    <h2 class="title">جدیدترین‌ها</h2><!-- End .title -->
                 </div><!-- End .heading-left -->
 
                 <div class="heading-right">
                     <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="trending-top-link" data-toggle="tab" href="#trending-top-tab" role="tab" aria-controls="trending-top-tab" aria-selected="true">محبوب ترین</a>
+                            <a class="nav-link active" id="trending-top-link" data-toggle="tab" href="#trending-top-tab" role="tab" aria-controls="trending-top-tab" aria-selected="true">جدیدترین</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" id="trending-best-link" data-toggle="tab" href="#trending-best-tab" role="tab" aria-controls="trending-best-tab" aria-selected="false">بیش ترین فروش</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                             <a class="nav-link" id="trending-sale-link" data-toggle="tab" href="#trending-sale-tab" role="tab" aria-controls="trending-sale-tab" aria-selected="false">جدیدترین</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div><!-- End .heading-right -->
             </div><!-- End .heading -->
@@ -655,614 +655,48 @@
                                 <!-- End .product -->
 
                                 <!-- End .product -->
-                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1188px;"><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-top">برتر</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-6.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1188px;">
+                                    @foreach ($products_latest as $item)
+                                        <div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
+                                            <figure class="product-media">
+                                                <a href="https://filenter.ir/molla/product.html">
+                                                    <img src="{{ $item->file_path }}" alt="تصویر محصول" class="product-image">
+                                                </a>
 
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
+                                                <div class="product-action-vertical">
+                                                    <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
+                                                </div><!-- End .product-action -->
 
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
+                                                    <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
+                                                </div><!-- End .product-action -->
+                                            </figure><!-- End .product-media -->
 
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">هدفون</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">هندزفری بی سیم</a></h3>
-                                        <!-- End .product-title -->
-                                        <div class="product-price">
-                                            199,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 100%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-
-                                        <div class="product-nav product-nav-dots">
-                                            <a href="#" style="background: #69b4ff;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" style="background: #ff887f;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" class="active" style="background: #333333;"><span class="sr-only">نام رنگ</span></a>
-                                        </div><!-- End .product-nav -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-7.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">بازی ویدیویی</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">دستگاه ایکس باکس وان
-                                                500GB</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            279,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 60%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 6 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-new">جدید</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-8.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">ساعت هوشمند</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">ساعت اپل - سری 4 جنس
-                                                صفحه آلمینیومی</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            499,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 80%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-
-                                        <div class="product-nav product-nav-dots">
-                                            <a href="#" style="background: #edd2c8;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" class="active" style="background: #333333;"><span class="sr-only">نام رنگ</span></a>
-                                        </div><!-- End .product-nav -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-top">برتر</span>
-                                        <span class="product-label label-circle label-sale">فروش ویژه</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-9.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">تلویزیون و سینما خانگی</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">تلویزیون ال ای دی
-                                                سونی</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            <span class="new-price">1,699,000 تومان</span>
-                                            <span class="old-price">1,999,000</span>
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 80%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 10 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-new">جدید</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-3.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">تب لت</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">آیپد اپل - سایز 11 اینچ
-                                                - 256 گیگ</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            899,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 80%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-
-                                        <div class="product-nav product-nav-dots">
-                                            <a href="#" style="background: #edd2c8;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" class="active" style="background: #333333;"><span class="sr-only">نام رنگ</span></a>
-                                        </div><!-- End .product-nav -->
-                                    </div><!-- End .product-body -->
-                                </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .owl-carousel -->
+                                            <div class="product-body">
+                                                <div class="product-cat">
+                                                    <a href="#">{{ $item->category->name ?? '' }}</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">{{ $item->name }}</a></h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    {{ number_format($item->price) }} تومان
+                                                </div><!-- End .product-price -->
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 6 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+                                            </div><!-- End .product-body -->
+                                        </div></div>
+                                    @endforeach
+                                </div></div>
+                            <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .owl-carousel -->
                         </div><!-- .End .tab-pane -->
-                        <div class="tab-pane p-0 fade" id="trending-best-tab" role="tabpanel" aria-labelledby="trending-best-link">
-                            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow owl-rtl owl-loaded owl-drag" data-toggle="owl" data-owl-options="{
-                                    &quot;nav&quot;: true,
-                                    &quot;dots&quot;: false,
-                                    &quot;margin&quot;: 20,
-                                    &quot;loop&quot;: false,
-                                    &quot;rtl&quot;: true,
-                    &quot;responsive&quot;: {
-                                        &quot;0&quot;: {
-                                            &quot;items&quot;:2
-                                        },
-                                        &quot;480&quot;: {
-                                            &quot;items&quot;:2
-                                        },
-                                        &quot;768&quot;: {
-                                            &quot;items&quot;:3
-                                        },
-                                        &quot;992&quot;: {
-                                            &quot;items&quot;:4
-                                        }
-                                    }
-                                }">
-                                <!-- End .product -->
 
-                                <!-- End .product -->
 
-                                <!-- End .product -->
-
-                                <!-- End .product -->
-
-                                <!-- End .product -->
-                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1188px;"><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-new">جدید</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-3.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">تب لت</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">آیپد اپل - سایز 11 اینچ
-                                                - 256 گیگ</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            899,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 80%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-
-                                        <div class="product-nav product-nav-dots">
-                                            <a href="#" style="background: #edd2c8;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" class="active" style="background: #333333;"><span class="sr-only">نام رنگ</span></a>
-                                        </div><!-- End .product-nav -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-2.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">لوازم صوتی</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">Bose - SoundLink
-                                                Bluetooth Speaker</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            79,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 60%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 6 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-top">برتر</span>
-                                        <span class="product-label label-circle label-sale">فروش ویژه</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-4.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">موبایل</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">گوشی Google - مدل Pixel
-                                                3 XL -
-                                                حافظه 128 گیگ</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            <span class="new-price">35,000 تومان</span>
-                                            <span class="old-price">41,000</span>
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 100%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 10 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-
-                                        <div class="product-nav product-nav-dots">
-                                            <a href="#" class="active" style="background: #edd2c8;"><span class="sr-only">نام رنگ</span></a>
-                                            <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" style="background: #333333;"><span class="sr-only">Color
-                                                    name</span></a>
-                                        </div><!-- End .product-nav -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-top">برتر</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-5.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">تلویزیون و سینما خانگی</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">Samsung - 55" Class LED
-                                                2160p Smart</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            899,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 60%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 5 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-top">برتر</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-1_002.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">لپ تاپ</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">لپ تاپ MacBook Pro -
-                                                سایز 13 اینچ</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            1,199,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 100%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .owl-carousel -->
-                        </div><!-- .End .tab-pane -->
-                        <div class="tab-pane p-0 fade" id="trending-sale-tab" role="tabpanel" aria-labelledby="trending-sale-link">
-                            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow owl-rtl owl-loaded owl-drag" data-toggle="owl" data-owl-options="{
-                                    &quot;nav&quot;: true,
-                                    &quot;dots&quot;: false,
-                                    &quot;margin&quot;: 20,
-                                    &quot;loop&quot;: false,
-                                    &quot;rtl&quot;: true,
-                    &quot;responsive&quot;: {
-                                        &quot;0&quot;: {
-                                            &quot;items&quot;:2
-                                        },
-                                        &quot;480&quot;: {
-                                            &quot;items&quot;:2
-                                        },
-                                        &quot;768&quot;: {
-                                            &quot;items&quot;:3
-                                        },
-                                        &quot;992&quot;: {
-                                            &quot;items&quot;:4
-                                        }
-                                    }
-                                }">
-                                <!-- End .product -->
-
-                                <!-- End .product -->
-
-                                <!-- End .product -->
-
-                                <!-- End .product -->
-                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 951px;"><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-new">جدید</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-8.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">ساعت هوشمند</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">ساعت اپل - سری 4 جنس
-                                                صفحه آلمینیومی</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            499,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 80%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-
-                                        <div class="product-nav product-nav-dots">
-                                            <a href="#" style="background: #edd2c8;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" class="active" style="background: #333333;"><span class="sr-only">نام رنگ</span></a>
-                                        </div><!-- End .product-nav -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-top">برتر</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-6.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">هدفون</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">هندزفری بی سیم</a></h3>
-                                        <!-- End .product-title -->
-                                        <div class="product-price">
-                                            199,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 100%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-
-                                        <div class="product-nav product-nav-dots">
-                                            <a href="#" style="background: #69b4ff;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" style="background: #ff887f;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" class="active" style="background: #333333;"><span class="sr-only">نام رنگ</span></a>
-                                        </div><!-- End .product-nav -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-7.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">بازی ویدیویی</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">دستگاه ایکس باکس وان
-                                                500GB</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            279,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 60%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 6 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div></div><div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
-                                    <figure class="product-media">
-                                        <span class="product-label label-circle label-new">جدید</span>
-                                        <a href="https://filenter.ir/molla/product.html">
-                                            <img src="{{ asset('assets/front/product-3.jpg')}}" alt="تصویر محصول" class="product-image">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                                        </div><!-- End .product-action -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
-                                            <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <div class="product-cat">
-                                            <a href="#">تب لت</a>
-                                        </div><!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">آیپد اپل - سایز 11 اینچ
-                                                - 256 گیگ</a></h3><!-- End .product-title -->
-                                        <div class="product-price">
-                                            899,000 تومان
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 80%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 دیدگاه )</span>
-                                        </div><!-- End .rating-container -->
-
-                                        <div class="product-nav product-nav-dots">
-                                            <a href="#" style="background: #edd2c8;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
-                                                    name</span></a>
-                                            <a href="#" class="active" style="background: #333333;"><span class="sr-only">نام رنگ</span></a>
-                                        </div><!-- End .product-nav -->
-                                    </div><!-- End .product-body -->
-                                </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev disabled"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next disabled"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .owl-carousel -->
-                        </div><!-- .End .tab-pane -->
                     </div><!-- End .tab-content -->
                 </div><!-- End .col-xl-4-5col -->
             </div><!-- End .row -->
@@ -1284,12 +718,16 @@
 
         <div class="products">
             <div class="row justify-content-center">
+
+                @foreach ($products_suggest as $item)
                 <div class="col-6 col-md-4 col-lg-3">
                     <div class="product product-2">
                         <figure class="product-media">
-                            <span class="product-label label-circle label-sale">فروش ویژه</span>
+                            @if($item->isSpecial())
+                                <span class="product-label label-circle label-sale">فروش ویژه</span>
+                            @endif
                             <a href="https://filenter.ir/molla/product.html">
-                                <img src="{{ asset('assets/front/product-10.jpg')}}" alt="تصویر محصول" class="product-image">
+                                <img src="{{ $item->file_path }}" alt="{{ $item->name }}" class="product-image">
                             </a>
 
                             <div class="product-action-vertical">
@@ -1306,13 +744,12 @@
 
                         <div class="product-body">
                             <div class="product-cat">
-                                <a href="#">هدفون</a>
+                                <a href="#">{{ $item->category->name || '' }}</a>
                             </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">هدفون وایرلس بیتس </a></h3>
+                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">{{ $item->name }} </a></h3>
                             <!-- End .product-title -->
                             <div class="product-price">
-                                <span class="new-price">279,000 تومان</span>
-                                <span class="old-price">349,000</span>
+                                {{ number_format($item->price) }} تومان
                             </div><!-- End .product-price -->
                             <div class="ratings-container">
                                 <div class="ratings">
@@ -1321,7 +758,7 @@
                                 <span class="ratings-text">( 4 دیدگاه )</span>
                             </div><!-- End .rating-container -->
 
-                            <div class="product-nav product-nav-dots">
+                            {{-- <div class="product-nav product-nav-dots">
                                 <a href="#" class="active" style="background: #666666;"><span class="sr-only">نام رنگ</span></a>
                                 <a href="#" style="background: #ff887f;"><span class="sr-only">نام
                                         رنگ</span></a>
@@ -1331,309 +768,12 @@
                                         رنگ</span></a>
                                 <a href="#" style="background: #eaeaec;"><span class="sr-only">نام
                                         رنگ</span></a>
-                            </div><!-- End .product-nav -->
+                            </div><!-- End .product-nav --> --}}
                         </div><!-- End .product-body -->
                     </div><!-- End .product -->
                 </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                @endforeach
 
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product product-2">
-                        <figure class="product-media">
-                            <a href="https://filenter.ir/molla/product.html">
-                                <img src="{{ asset('assets/front/product-11.jpg')}}" alt="تصویر محصول" class="product-image">
-                            </a>
-
-                            <div class="product-action-vertical">
-                                <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                            </div><!-- End .product-action -->
-
-                            <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن
-                                        به
-                                        سبد خرید</span></a>
-                                <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
-
-                        <div class="product-body">
-                            <div class="product-cat">
-                                <a href="#">دوربین فیلمبرداری</a>
-                            </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">دوربین عکاسی 360 درجه ضد آب</a>
-                            </h3><!-- End .product-title -->
-                            <div class="product-price">
-                                349,000 تومان
-                            </div><!-- End .product-price -->
-                            <div class="ratings-container">
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
-                                <span class="ratings-text">( 2 دیدگاه )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
-                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product product-2">
-                        <figure class="product-media">
-                            <span class="product-label label-circle label-new">جدید</span>
-                            <a href="https://filenter.ir/molla/product.html">
-                                <img src="{{ asset('assets/front/product-12.jpg')}}" alt="تصویر محصول" class="product-image">
-                                <img src="{{ asset('assets/front/product-12-2.jpg')}}" alt="تصویر محصول" class="product-image-hover">
-                            </a>
-
-                            <div class="product-action-vertical">
-                                <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                            </div><!-- End .product-action -->
-
-                            <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن
-                                        به
-                                        سبد خرید</span></a>
-                                <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
-
-                        <div class="product-body">
-                            <div class="product-cat">
-                                <a href="#">ساعت هوشمند</a>
-                            </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">ساعت اپل - با بند سفید اسپورت</a>
-                            </h3><!-- End .product-title -->
-                            <div class="product-price">
-                                214,000 تومان
-                            </div><!-- End .product-price -->
-                            <div class="ratings-container">
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
-                                <span class="ratings-text">( 0 دیدگاه )</span>
-                            </div><!-- End .rating-container -->
-
-                            <div class="product-nav product-nav-dots">
-                                <a href="#" class="active" style="background: #e2e2e2;"><span class="sr-only">نام رنگ</span></a>
-                                <a href="#" style="background: #333333;"><span class="sr-only">نام
-                                        رنگ</span></a>
-                                <a href="#" style="background: #f2bc9e;"><span class="sr-only">نام
-                                        رنگ</span></a>
-                            </div><!-- End .product-nav -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
-                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product product-2">
-                        <figure class="product-media">
-                            <a href="https://filenter.ir/molla/product.html">
-                                <img src="{{ asset('assets/front/product-13.jpg')}}" alt="تصویر محصول" class="product-image">
-                            </a>
-
-                            <div class="product-action-vertical">
-                                <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                            </div><!-- End .product-action -->
-
-                            <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن
-                                        به
-                                        سبد خرید</span></a>
-                                <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
-
-                        <div class="product-body">
-                            <div class="product-cat">
-                                <a href="#">لپ تاپ</a>
-                            </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">لپ تاپ لنوو - 15.6 اینچ</a></h3>
-                            <!-- End .product-title -->
-                            <div class="product-price">
-                                <span class="out-price">339,000 تومان</span>
-                                <span class="out-text">ناموجود</span>
-                            </div><!-- End .product-price -->
-                            <div class="ratings-container">
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
-                                <span class="ratings-text">( 11 دیدگاه )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
-                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product product-2">
-                        <figure class="product-media">
-                            <a href="https://filenter.ir/molla/product.html">
-                                <img src="{{ asset('assets/front/product-14.jpg')}}" alt="تصویر محصول" class="product-image">
-                            </a>
-
-                            <div class="product-action-vertical">
-                                <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                            </div><!-- End .product-action -->
-
-                            <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن
-                                        به
-                                        سبد خرید</span></a>
-                                <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
-
-                        <div class="product-body">
-                            <div class="product-cat">
-                                <a href="#">دوربین دیجیتال</a>
-                            </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">دوربین سونی - آلفا 5100</a></h3>
-                            <!-- End .product-title -->
-                            <div class="product-price">
-                                499,000 تومان
-                            </div><!-- End .product-price -->
-                            <div class="ratings-container">
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 50%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
-                                <span class="ratings-text">( 11 دیدگاه )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
-                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product product-2">
-                        <figure class="product-media">
-                            <a href="https://filenter.ir/molla/product.html">
-                                <img src="{{ asset('assets/front/product-15.jpg')}}" alt="تصویر محصول" class="product-image">
-                            </a>
-
-                            <div class="product-action-vertical">
-                                <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                            </div><!-- End .product-action -->
-
-                            <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن
-                                        به
-                                        سبد خرید</span></a>
-                                <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
-
-                        <div class="product-body">
-                            <div class="product-cat">
-                                <a href="#">لپ تاپ</a>
-                            </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">اسپیکر هوشمند کوچک</a></h3>
-                            <!-- End .product-title -->
-                            <div class="product-price">
-                                490,000 تومان
-                            </div><!-- End .product-price -->
-                            <div class="ratings-container">
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
-                                <span class="ratings-text">( 24 دیدگاه )</span>
-                            </div><!-- End .rating-container -->
-
-                            <div class="product-nav product-nav-dots">
-                                <a href="#" class="active" style="background: #ef837b;"><span class="sr-only">نام رنگ</span></a>
-                                <a href="#" style="background: #333333;"><span class="sr-only">نام
-                                        رنگ</span></a>
-                                <a href="#" style="background: #e2e2e2;"><span class="sr-only">نام
-                                        رنگ</span></a>
-                            </div><!-- End .product-nav -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
-                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product product-2">
-                        <figure class="product-media">
-                            <span class="product-label label-circle label-sale">فروش ویژه</span>
-                            <a href="https://filenter.ir/molla/product.html">
-                                <img src="{{ asset('assets/front/product-16.jpg')}}" alt="تصویر محصول" class="product-image">
-                            </a>
-
-                            <div class="product-action-vertical">
-                                <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                            </div><!-- End .product-action -->
-
-                            <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن
-                                        به
-                                        سبد خرید</span></a>
-                                <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
-
-                        <div class="product-body">
-                            <div class="product-cat">
-                                <a href="#">لوازم صوتی</a>
-                            </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">اسپیکر بلوتوث قابل حمل </a></h3>
-                            <!-- End .product-title -->
-                            <div class="product-price">
-                                <span class="new-price">99,000 تومان</span>
-                                <span class="old-price">129,000</span>
-                            </div><!-- End .product-price -->
-                            <div class="ratings-container">
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 40%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
-                                <span class="ratings-text">( 4 دیدگاه )</span>
-                            </div><!-- End .rating-container -->
-
-                            <div class="product-nav product-nav-dots">
-                                <a href="#" class="active" style="background: #666666;"><span class="sr-only">نام رنگ</span></a>
-                                <a href="#" style="background: #ff887f;"><span class="sr-only">نام
-                                        رنگ</span></a>
-                                <a href="#" style="background: #6699cc;"><span class="sr-only">نام
-                                        رنگ</span></a>
-                                <a href="#" style="background: #f3dbc1;"><span class="sr-only">نام
-                                        رنگ</span></a>
-                                <a href="#" style="background: #eaeaec;"><span class="sr-only">نام
-                                        رنگ</span></a>
-                            </div><!-- End .product-nav -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
-                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product product-2">
-                        <figure class="product-media">
-                            <a href="https://filenter.ir/molla/product.html">
-                                <img src="{{ asset('assets/front/product-17.jpg')}}" alt="تصویر محصول" class="product-image">
-                            </a>
-
-                            <div class="product-action-vertical">
-                                <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                            </div><!-- End .product-action -->
-
-                            <div class="product-action">
-                                <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن
-                                        به
-                                        سبد خرید</span></a>
-                                <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
-                        </figure><!-- End .product-media -->
-
-                        <div class="product-body">
-                            <div class="product-cat">
-                                <a href="#">خانه هوشمند</a>
-                            </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">قطب نمای گوگل</a></h3>
-                            <!-- End .product-title -->
-                            <div class="product-price">
-                                149,000 تومان
-                            </div><!-- End .product-price -->
-                            <div class="ratings-container">
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 60%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
-                                <span class="ratings-text">( 2 دیدگاه )</span>
-                            </div><!-- End .rating-container -->
-                        </div><!-- End .product-body -->
-                    </div><!-- End .product -->
-                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
             </div><!-- End .row -->
         </div><!-- End .products -->
     </div><!-- End .container -->

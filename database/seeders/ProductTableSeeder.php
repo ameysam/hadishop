@@ -22,27 +22,27 @@ class ProductTableSeeder extends Seeder
     {
         $categories = array_reverse([
             [
-                'name' => 'کامپیوتر و لپ تاپ',
+                'name' => 'کامپیوتر و لپ تاپ', //6
                 'file' => '/assets/front/1.png',
             ],
             [
-                'name' => 'دوربین دیجیتال',
+                'name' => 'دوربین دیجیتال', //5
                 'file' => '/assets/front/2.png',
             ],
             [
-                'name' => 'گوشی هوشمند',
+                'name' => 'گوشی هوشمند', //4
                 'file' => '/assets/front/3_002.png',
             ],
             [
-                'name' => 'تلویزیون',
+                'name' => 'تلویزیون', //3
                 'file' => '/assets/front/4.png',
             ],
             [
-                'name' => 'لوازم صوتی',
+                'name' => 'لوازم صوتی', //2
                 'file' => '/assets/front/5_002.png',
             ],
             [
-                'name' => 'ساعت هوشمند',
+                'name' => 'ساعت هوشمند', //‍1
                 'file' => '/assets/front/6.png',
             ],
         ]);
@@ -108,6 +108,100 @@ class ProductTableSeeder extends Seeder
                 'description' => 'اسپیکر بلوتوث',
                 'price' => 365000,
                 'file' => 'assets/front/product-2.jpg',
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'هندزفری بی سیم',
+                'description' => 'هندزفری بی سیم',
+                'price' => 1990000,
+                'file' => 'assets/front/product-6.jpg',
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'دستگاه ایکس باکس وان',
+                'description' => 'دستگاه ایکس باکس وان',
+                'price' => 2698500,
+                'file' => 'assets/front/product-7.jpg',
+            ],
+            [
+                'category_id' => 1,
+                'name' => 'ساعت اپل - سری 4 جنس صفحه آلمینیومی',
+                'description' => 'ساعت اپل - سری 4 جنس صفحه آلمینیومی',
+                'price' => 4993650,
+                'file' => 'assets/front/product-8.jpg',
+            ],
+            [
+                'category_id' => 4,
+                'name' => 'آیپد اپل - سایز 11 اینچ - 256 گیگ',
+                'description' => 'آیپد اپل - سایز 11 اینچ - 256 گیگ',
+                'price' => 9658000,
+                'file' => 'assets/front/product-3.jpg',
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'هدفون وایرلس بیتس',
+                'description' => 'هدفون وایرلس بیتس',
+                'price' => 1254000,
+                'file' => 'assets/front/product-10.jpg',
+                'special' => 1,
+                'suggest' => 1,
+            ],
+            [
+                'category_id' => 5,
+                'name' => 'دوربین عکاسی 360 درجه ضد آب',
+                'description' => 'دوربین عکاسی 360 درجه ضد آب',
+                'price' => 3254000,
+                'file' => 'assets/front/product-11.jpg',
+                'suggest' => 1,
+            ],
+            [
+                'category_id' => 1,
+                'name' => 'ساعت اپل - با بند سفید اسپورت',
+                'description' => 'ساعت اپل - با بند سفید اسپورت',
+                'price' => 54710000,
+                'file' => 'assets/front/product-12.jpg',
+                'suggest' => 1
+            ],
+            [
+                'category_id' => 6,
+                'name' => 'لپ تاپ لنوو - 15.6 اینچ',
+                'description' => 'لپ تاپ لنوو - 15.6 اینچ',
+                'price' => 1800000,
+                'file' => 'assets/front/product-13.jpg',
+                'suggest' => 1
+            ],
+            [
+                'category_id' => 5,
+                'name' => 'دوربین سونی - آلفا 5100',
+                'description' => 'دوربین سونی - آلفا 5100',
+                'price' => 6520000,
+                'file' => 'assets/front/product-14.jpg',
+                'suggest' => 1
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'اسپیکر هوشمند کوچک',
+                'description' => 'اسپیکر هوشمند کوچک',
+                'price' => 111000,
+                'file' => 'assets/front/product-15.jpg',
+                'suggest' => 1
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'اسپیکر بلوتوث قابل حمل',
+                'description' => 'اسپیکر بلوتوث قابل حمل',
+                'price' => 3325000,
+                'file' => 'assets/front/product-16.jpg',
+                'suggest' => 1
+            ],
+            [
+                'category_id' => 3,
+                'name' => 'قطب نمای گوگل',
+                'description' => 'قطب نمای گوگل',
+                'price' => 146500,
+                'file' => 'assets/front/product-17.jpg',
+                'suggest' => 1,
+                'special' => 1,
             ],
         ];
 
