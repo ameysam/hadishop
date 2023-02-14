@@ -31,7 +31,6 @@ class ProductController extends Controller
     {
         $records = Product::with('category')->latest('id')->paginate(2);
 
-        return
         $data = [
             'records' => $records,
         ];
@@ -41,9 +40,8 @@ class ProductController extends Controller
 
     public function show()
     {
-        return
         $data = [
-            'record' => $this->record->file_path,
+            'record' => $this->record,
         ];
 
         return view('products._self.admin.show', $data);

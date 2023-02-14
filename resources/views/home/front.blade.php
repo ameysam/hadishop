@@ -17,145 +17,96 @@
             <!-- End .intro-slide -->
 
             <!-- End .intro-slide -->
-        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(3108px, 0px, 0px); transition: all 0s ease 0s; width: 9324px;"><div class="owl-item cloned" style="width: 1554px;"><div class="intro-slide" style="background-image: url({{ asset('assets/front/images/slide-1.png') }});">
-                <div class="container intro-content">
-                    <div class="row justify-content-end">
-                        <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                            <h3 class="intro-subtitle text-third">پیشنهاد و تبلیغات</h3>
-                            <!-- End .h3 intro-subtitle -->
-                            <h1 class="intro-title">آیپد های</h1>
-                            <h1 class="intro-title">هوشمند اپل</h1><!-- End .intro-title -->
+        <div class="owl-stage-outer">
+            <div class="owl-stage" style="transform: translate3d(3108px, 0px, 0px); transition: all 0s ease 0s; width: 9324px;">
 
-                            <div class="intro-price" dir="rtl">
-                                <sup class="intro-old-price">349,000</sup>
-                                <span class="text-third">
-                                    279,000 تومان
-                                </span>
-                            </div><!-- End .intro-price -->
+                @foreach ($sliders as $item)
+                    <div class="owl-item active" style="width: 1554px;">
+                        <div class="intro-slide" style="background-image: url({{$item->file_path}});">
+                            <div class="container intro-content">
+                                <div class="row justify-content-end">
+                                    <div class="col-auto col-sm-7 col-md-6 col-lg-5">
+                                        {{-- <h3 class="intro-subtitle text-third">پیشنهاد و تبلیغات</h3> --}}
+                                        <!-- End .h3 intro-subtitle -->
+                                        <h3 class="intro-title">{{$item->name}}</h3>
+                                        {{-- <h1 class="intro-title">هوشمند اپل</h1><!-- End .intro-title --> --}}
 
-                            <a href="https://filenter.ir/molla/category.html" class="btn btn-primary btn-round">
-                                <span>خرید</span>
-                                <i class="icon-long-arrow-left"></i>
-                            </a>
-                        </div><!-- End .col-lg-11 offset-lg-1 -->
-                    </div><!-- End .row -->
-                </div><!-- End .intro-content -->
-            </div></div><div class="owl-item cloned" style="width: 1554px;"><div class="intro-slide" style="background-image: url({{ asset('assets/front/images/slide-2.png') }});">
-                <div class="container intro-content">
-                    <div class="row justify-content-end">
-                        <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                            <h3 class="intro-subtitle text-primary">محصول جدید</h3>
-                            <!-- End .h3 intro-subtitle -->
-                            <h1 class="intro-title">هدفون های جدید <br>با کیفیت صوتی بالا </h1>
-                            <!-- End .intro-title -->
+                                        {{-- <div class="intro-price" dir="rtl"> --}}
+                                            {{-- <sup class="intro-old-price">349,000</sup> --}}
+                                            {{-- <span class="text-third">
+                                                279,000 تومان
+                                            </span> --}}
+                                        {{-- </div><!-- End .intro-price --> --}}
 
-                            <div class="intro-price" dir="rtl">
-                                <sup>امروز : </sup>
-                                <span class="text-primary">
-                                    999,000 تومان
-                                </span>
-                            </div><!-- End .intro-price -->
+                                        <a href="{{$item->link}}" class="btn btn-primary btn-round">
+                                            <span>مشاهده</span>
+                                            <i class="icon-long-arrow-left"></i>
+                                        </a>
+                                    </div><!-- End .col-lg-11 offset-lg-1 -->
+                                </div><!-- End .row -->
+                            </div><!-- End .intro-content -->
+                        </div>
+                    </div>
+                @endforeach
 
-                            <a href="https://filenter.ir/molla/category.html" class="btn btn-primary btn-round">
-                                <span>خرید</span>
-                                <i class="icon-long-arrow-left"></i>
-                            </a>
-                        </div><!-- End .col-md-6 offset-md-6 -->
-                    </div><!-- End .row -->
-                </div><!-- End .intro-content -->
-            </div></div><div class="owl-item active" style="width: 1554px;"><div class="intro-slide" style="background-image: url({{ asset('assets/front/images/slide-1.png') }});">
-                <div class="container intro-content">
-                    <div class="row justify-content-end">
-                        <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                            <h3 class="intro-subtitle text-third">پیشنهاد و تبلیغات</h3>
-                            <!-- End .h3 intro-subtitle -->
-                            <h1 class="intro-title">آیپد های</h1>
-                            <h1 class="intro-title">هوشمند اپل</h1><!-- End .intro-title -->
+                {{-- <div class="owl-item active" style="width: 1554px;">
+                    <div class="intro-slide" style="background-image: url({{ asset('assets/front/images/slide-1.png') }});">
+                        <div class="container intro-content">
+                            <div class="row justify-content-end">
+                                <div class="col-auto col-sm-7 col-md-6 col-lg-5">
+                                    <h3 class="intro-subtitle text-third">پیشنهاد و تبلیغات</h3>
+                                    <!-- End .h3 intro-subtitle -->
+                                    <h1 class="intro-title">آیپد های</h1>
+                                    <h1 class="intro-title">هوشمند اپل</h1><!-- End .intro-title -->
 
-                            <div class="intro-price" dir="rtl">
-                                <sup class="intro-old-price">349,000</sup>
-                                <span class="text-third">
-                                    279,000 تومان
-                                </span>
-                            </div><!-- End .intro-price -->
+                                    <div class="intro-price" dir="rtl">
+                                        <sup class="intro-old-price">349,000</sup>
+                                        <span class="text-third">
+                                            279,000 تومان
+                                        </span>
+                                    </div><!-- End .intro-price -->
 
-                            <a href="https://filenter.ir/molla/category.html" class="btn btn-primary btn-round">
-                                <span>خرید</span>
-                                <i class="icon-long-arrow-left"></i>
-                            </a>
-                        </div><!-- End .col-lg-11 offset-lg-1 -->
-                    </div><!-- End .row -->
-                </div><!-- End .intro-content -->
-            </div></div><div class="owl-item" style="width: 1554px;"><div class="intro-slide" style="background-image: url({{ asset('assets/front/images/slide-2.png') }});">
-                <div class="container intro-content">
-                    <div class="row justify-content-end">
-                        <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                            <h3 class="intro-subtitle text-primary">محصول جدید</h3>
-                            <!-- End .h3 intro-subtitle -->
-                            <h1 class="intro-title">هدفون های جدید <br>با کیفیت صوتی بالا </h1>
-                            <!-- End .intro-title -->
+                                    <a href="https://filenter.ir/molla/category.html" class="btn btn-primary btn-round">
+                                        <span>خرید</span>
+                                        <i class="icon-long-arrow-left"></i>
+                                    </a>
+                                </div><!-- End .col-lg-11 offset-lg-1 -->
+                            </div><!-- End .row -->
+                        </div><!-- End .intro-content -->
+                    </div>
+                </div>
 
-                            <div class="intro-price" dir="rtl">
-                                <sup>امروز : </sup>
-                                <span class="text-primary">
-                                    999,000 تومان
-                                </span>
-                            </div><!-- End .intro-price -->
+                <div class="owl-item" style="width: 1554px;">
+                    <div class="intro-slide" style="background-image: url({{ asset('assets/front/images/slide-2.png') }});">
+                        <div class="container intro-content">
+                            <div class="row justify-content-end">
+                                <div class="col-auto col-sm-7 col-md-6 col-lg-5">
+                                    <h3 class="intro-subtitle text-primary">محصول جدید</h3>
+                                    <!-- End .h3 intro-subtitle -->
+                                    <h1 class="intro-title">هدفون های جدید <br>با کیفیت صوتی بالا </h1>
+                                    <!-- End .intro-title -->
 
-                            <a href="https://filenter.ir/molla/category.html" class="btn btn-primary btn-round">
-                                <span>خرید</span>
-                                <i class="icon-long-arrow-left"></i>
-                            </a>
-                        </div><!-- End .col-md-6 offset-md-6 -->
-                    </div><!-- End .row -->
-                </div><!-- End .intro-content -->
-            </div></div><div class="owl-item cloned" style="width: 1554px;"><div class="intro-slide" style="background-image: url({{ asset('assets/front/images/slide-1.png') }});">
-                <div class="container intro-content">
-                    <div class="row justify-content-end">
-                        <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                            <h3 class="intro-subtitle text-third">پیشنهاد و تبلیغات</h3>
-                            <!-- End .h3 intro-subtitle -->
-                            <h1 class="intro-title">آیپد های</h1>
-                            <h1 class="intro-title">هوشمند اپل</h1><!-- End .intro-title -->
+                                    <div class="intro-price" dir="rtl">
+                                        <sup>امروز : </sup>
+                                        <span class="text-primary">
+                                            999,000 تومان
+                                        </span>
+                                    </div><!-- End .intro-price -->
 
-                            <div class="intro-price" dir="rtl">
-                                <sup class="intro-old-price">349,000</sup>
-                                <span class="text-third">
-                                    279,000 تومان
-                                </span>
-                            </div><!-- End .intro-price -->
+                                    <a href="https://filenter.ir/molla/category.html" class="btn btn-primary btn-round">
+                                        <span>خرید</span>
+                                        <i class="icon-long-arrow-left"></i>
+                                    </a>
+                                </div><!-- End .col-md-6 offset-md-6 -->
+                            </div><!-- End .row -->
+                        </div><!-- End .intro-content -->
+                    </div>
+                </div> --}}
 
-                            <a href="https://filenter.ir/molla/category.html" class="btn btn-primary btn-round">
-                                <span>خرید</span>
-                                <i class="icon-long-arrow-left"></i>
-                            </a>
-                        </div><!-- End .col-lg-11 offset-lg-1 -->
-                    </div><!-- End .row -->
-                </div><!-- End .intro-content -->
-            </div></div><div class="owl-item cloned" style="width: 1554px;"><div class="intro-slide" style="background-image: url({{ asset('assets/front/images/slide-2.png') }});">
-                <div class="container intro-content">
-                    <div class="row justify-content-end">
-                        <div class="col-auto col-sm-7 col-md-6 col-lg-5">
-                            <h3 class="intro-subtitle text-primary">محصول جدید</h3>
-                            <!-- End .h3 intro-subtitle -->
-                            <h1 class="intro-title">هدفون های جدید <br>با کیفیت صوتی بالا </h1>
-                            <!-- End .intro-title -->
+            </div>
+        </div>
 
-                            <div class="intro-price" dir="rtl">
-                                <sup>امروز : </sup>
-                                <span class="text-primary">
-                                    999,000 تومان
-                                </span>
-                            </div><!-- End .intro-price -->
-
-                            <a href="https://filenter.ir/molla/category.html" class="btn btn-primary btn-round">
-                                <span>خرید</span>
-                                <i class="icon-long-arrow-left"></i>
-                            </a>
-                        </div><!-- End .col-md-6 offset-md-6 -->
-                    </div><!-- End .row -->
-                </div><!-- End .intro-content -->
-            </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .intro-slider owl-carousel owl-simple -->
+        <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .intro-slider owl-carousel owl-simple -->
 
         <span class="slider-loader"></span><!-- End .slider-loader -->
     </div><!-- End .intro-slider-container -->
@@ -458,21 +409,7 @@
 
     <div class="mb-6"></div><!-- End .mb-6 -->
 
-    <div class="container">
-        <div class="cta cta-border mb-5" style="background-image: url({{ asset('assets/front/images/bg-1.jpg') }});">
-            <img src="{{ asset('assets/front/camera.png')}}" alt="camera" class="cta-img">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="cta-content">
-                        <div class="cta-text text-left text-white">
-                            <p>پیشنهاد ویژه امروز <br><strong> مدیا پلیر جدید</strong></p>
-                        </div><!-- End .cta-text -->
-                        <a href="#" class="btn btn-primary btn-round"><span>خرید - 429,000 تومان</span><i class="icon-long-arrow-left"></i></a>
-                    </div><!-- End .cta-content -->
-                </div><!-- End .col-md-12 -->
-            </div><!-- End .row -->
-        </div><!-- End .cta -->
-    </div><!-- End .container -->
+
 
     {{-- <div class="container">
         <div class="heading text-center mb-3">
