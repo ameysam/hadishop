@@ -206,8 +206,12 @@ class ProductTableSeeder extends Seeder
         ];
 
 
+        $counter = 0;
         foreach($products as $record){
             $file = $record['file'];
+            $record['available'] = $counter % 5 == 0 ? 0 : 1;
+            $record['visit_count'] = 0;
+            $counter++;
             unset($record['file']);
             $product = Product::create($record);
             $files = Storage::disk('public_folder')->get($file);

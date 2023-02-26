@@ -5,7 +5,7 @@
                 <a href="{{ route('front.home.index') }}" class="sf-with-ul۱">صفحه اصلی</a>
             </li>
             <li class="megamenu-container">
-                <a href="#" class="sf-with-ul1">فهرست کالاها</a>
+                <a href="{{ route('front.product.index') }}" class="sf-with-ul1">فهرست کالاها</a>
             </li>
             <li class="megamenu-container">
                 <a href="#" class="sf-with-ul1">درباره ما</a>

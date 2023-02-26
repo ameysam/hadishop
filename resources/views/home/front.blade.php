@@ -106,7 +106,9 @@
             </div>
         </div>
 
-        <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .intro-slider owl-carousel owl-simple -->
+        <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div>
+        {{-- <div class="owl-dots disabled"></div> --}}
+    </div><!-- End .intro-slider owl-carousel owl-simple -->
 
         <span class="slider-loader"></span><!-- End .slider-loader -->
     </div><!-- End .intro-slider-container -->
@@ -269,43 +271,52 @@
                     @foreach ($products as $product)
                     <div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
                         <figure class="product-media">
-                            {{-- <span class="product-label label-circle label-top">برتر</span> --}}
-                            <a href="https://filenter.ir/molla/product.html">
+                            @if(!$product->isAvailable())
+                                <span class="product-label label-circle label-out">ناموجود</span>
+                            @elseif($product->isSpecial())
+                                <span class="product-label label-circle label-sale">فروش ویژه</span>
+                            @elseif($product->isSuggest())
+                                <span class="product-label label-circle label-new">پیشنهاد شده</span>
+                            @endif
+                            <a href="{{ $product->urlShow() }}">
                                 <img src="{{ $product->file_path }}" alt="{{$product->name}}" class="product-image">
                             </a>
 
-                            <div class="product-action-vertical">
+                            {{-- <div class="product-action-vertical">
                                 <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
-                            </div><!-- End .product-action -->
+                            </div><!-- End .product-action --> --}}
 
-                            <div class="product-action">
+                            {{-- <div class="product-action">
                                 <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن
                                         به
                                         سبد خرید</span></a>
                                 <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
+                            </div><!-- End .product-action --> --}}
                         </figure><!-- End .product-media -->
 
                         <div class="product-body">
                             <div class="product-cat">
                                 <a href="#">{{$product->category->name ?? ''}}</a>
                             </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">{{$product->name}}</a>
+                            <h3 class="product-title"><a href="{{ $product->urlShow() }}">{{$product->name}}</a>
                             </h3><!-- End .product-title -->
                             <div class="product-price">
                                 {{number_format($product->price)}} تومان
                             </div><!-- End .product-price -->
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 100%;"></div>
+                                    <div class="ratings-val" style="width: {{$product->visit_count*5}}%;"></div>
                                     <!-- End .ratings-val -->
                                 </div><!-- End .ratings -->
-                                <span class="ratings-text">( 4 دیدگاه )</span>
+                                <span class="ratings-text">( {{$product->visit_count}} بازدید )</span>
                             </div><!-- End .rating-container -->
                         </div><!-- End .product-body -->
                     </div></div>
                     @endforeach
-                    </div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div><!-- End .owl-carousel -->
+                    </div></div>
+                    <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div>
+                    {{-- <div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div> --}}
+                </div><!-- End .owl-carousel -->
             </div><!-- .End .tab-pane -->
             @foreach ($categories as $item)
                 <div class="tab-pane p-0 fade" id="new-{{$item->id}}-tab" role="tabpanel" aria-labelledby="new-{{$item->id}}-link">
@@ -349,11 +360,11 @@
                                 <div class="product product-2">
                                 <figure class="product-media">
                                     <span class="product-label label-circle label-new">جدید</span>
-                                    <a href="https://filenter.ir/molla/product.html">
+                                    <a href="{{ $product->urlShow() }}">
                                         <img src="{{ $product->file_path }}" alt="{{ $product->name }}" class="product-image">
                                     </a>
 
-                                    <div class="product-action-vertical">
+                                    {{-- <div class="product-action-vertical">
                                         <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
                                     </div><!-- End .product-action -->
 
@@ -362,14 +373,14 @@
                                                 به
                                                 سبد خرید</span></a>
                                         <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                    </div><!-- End .product-action -->
+                                    </div><!-- End .product-action --> --}}
                                 </figure><!-- End .product-media -->
 
                                 <div class="product-body">
                                     <div class="product-cat">
                                         <a href="#">{{$item->name}}</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">
+                                    <h3 class="product-title"><a href="{{ $product->urlShow() }}">
                                         {{$product->name}}
                                     </a></h3><!-- End .product-title -->
                                     <div class="product-price">
@@ -377,18 +388,18 @@
                                     </div><!-- End .product-price -->
                                     <div class="ratings-container">
                                         <div class="ratings">
-                                            <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                                            <div class="ratings-val" style="width: {{$product->visit_count*5}}%;"></div><!-- End .ratings-val -->
                                         </div><!-- End .ratings -->
-                                        <span class="ratings-text">( 4 دیدگاه )</span>
+                                        <span class="ratings-text">( {{$product->visit_count}} بازدید )</span>
                                     </div><!-- End .rating-container -->
 
-                                    <div class="product-nav product-nav-dots">
+                                    {{-- <div class="product-nav product-nav-dots">
                                         <a href="#" style="background: #edd2c8;"><span class="sr-only">نام
                                                 رنگ</span></a>
                                         <a href="#" style="background: #eaeaec;"><span class="sr-only">نام
                                                 رنگ</span></a>
                                         <a href="#" class="active" style="background: #333333;"><span class="sr-only">نام رنگ</span></a>
-                                    </div><!-- End .product-nav -->
+                                    </div><!-- End .product-nav --> --}}
                                 </div><!-- End .product-body -->
                                 </div>
                             </div>
@@ -597,40 +608,42 @@
                                     @foreach ($products_latest as $item)
                                         <div class="owl-item active" style="width: 217.6px; margin-left: 20px;"><div class="product product-2">
                                             <figure class="product-media">
-                                                <a href="https://filenter.ir/molla/product.html">
-                                                    <img src="{{ $item->file_path }}" alt="تصویر محصول" class="product-image">
+                                                <a href="{{ $item->urlShow() }}">
+                                                    <img src="{{ $item->file_path }}" alt="{{ $item->name }}" class="product-image">
                                                 </a>
 
-                                                <div class="product-action-vertical">
+                                                {{-- <div class="product-action-vertical">
                                                     <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
                                                 </div><!-- End .product-action -->
 
                                                 <div class="product-action">
                                                     <a href="#" class="btn-product btn-cart" title="افزودن به سبد خرید"><span>افزودن به سبد خرید</span></a>
                                                     <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                                </div><!-- End .product-action -->
+                                                </div><!-- End .product-action --> --}}
                                             </figure><!-- End .product-media -->
 
                                             <div class="product-body">
                                                 <div class="product-cat">
                                                     <a href="#">{{ $item->category->name ?? '' }}</a>
                                                 </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">{{ $item->name }}</a></h3><!-- End .product-title -->
+                                                <h3 class="product-title"><a href="{{ $item->urlShow() }}">{{ $item->name }}</a></h3><!-- End .product-title -->
                                                 <div class="product-price">
                                                     {{ number_format($item->price) }} تومان
                                                 </div><!-- End .product-price -->
                                                 <div class="ratings-container">
                                                     <div class="ratings">
-                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <div class="ratings-val" style="width: {{ $item->visit_count * 5 }}%;"></div>
                                                         <!-- End .ratings-val -->
                                                     </div><!-- End .ratings -->
-                                                    <span class="ratings-text">( 6 دیدگاه )</span>
+                                                    <span class="ratings-text">( {{ $item->visit_count }} دیدگاه )</span>
                                                 </div><!-- End .rating-container -->
                                             </div><!-- End .product-body -->
                                         </div></div>
                                     @endforeach
                                 </div></div>
-                            <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div><div class="owl-dots disabled"></div></div><!-- End .owl-carousel -->
+                            <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="icon-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-left"></i></button></div>
+                            {{-- <div class="owl-dots disabled"></div> --}}
+                        </div><!-- End .owl-carousel -->
                         </div><!-- .End .tab-pane -->
 
 
@@ -660,14 +673,21 @@
                 <div class="col-6 col-md-4 col-lg-3">
                     <div class="product product-2">
                         <figure class="product-media">
-                            @if($item->isSpecial())
+                            @if(!$item->isAvailable())
+                                <span class="product-label label-circle label-out">ناموجود</span>
+                            @elseif($item->isSpecial())
                                 <span class="product-label label-circle label-sale">فروش ویژه</span>
+                            @elseif($item->isSuggest())
+                                <span class="product-label label-circle label-new">پیشنهاد شده</span>
                             @endif
-                            <a href="https://filenter.ir/molla/product.html">
+                            {{-- @if($item->isSpecial())
+                                <span class="product-label label-circle label-sale">فروش ویژه</span>
+                            @endif --}}
+                            <a href="{{ $item->urlShow() }}">
                                 <img src="{{ $item->file_path }}" alt="{{ $item->name }}" class="product-image">
                             </a>
 
-                            <div class="product-action-vertical">
+                            {{-- <div class="product-action-vertical">
                                 <a href="#" class="btn-product-icon btn-wishlist" title="افزودن به لیست علاقه مندی"></a>
                             </div><!-- End .product-action -->
 
@@ -676,23 +696,23 @@
                                         به
                                         سبد خرید</span></a>
                                 <a href="https://filenter.ir/molla/popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                            </div><!-- End .product-action -->
+                            </div><!-- End .product-action --> --}}
                         </figure><!-- End .product-media -->
 
                         <div class="product-body">
                             <div class="product-cat">
-                                <a href="#">{{ $item->category->name || '' }}</a>
+                                <a href="#">{{ $item->category->name ?? '' }}</a>
                             </div><!-- End .product-cat -->
-                            <h3 class="product-title"><a href="https://filenter.ir/molla/product.html">{{ $item->name }} </a></h3>
+                            <h3 class="product-title"><a href="{{ $item->urlShow() }}">{{ $item->name }} </a></h3>
                             <!-- End .product-title -->
                             <div class="product-price">
                                 {{ number_format($item->price) }} تومان
                             </div><!-- End .product-price -->
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 40%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: {{$item->visit_count*5}}%;"></div><!-- End .ratings-val -->
                                 </div><!-- End .ratings -->
-                                <span class="ratings-text">( 4 دیدگاه )</span>
+                                <span class="ratings-text">( {{$item->visit_count}} دیدگاه )</span>
                             </div><!-- End .rating-container -->
 
                             {{-- <div class="product-nav product-nav-dots">

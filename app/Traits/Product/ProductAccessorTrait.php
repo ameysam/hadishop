@@ -49,4 +49,14 @@ trait ProductAccessorTrait
         }
         return $value;
     }
+
+    public function getAvailableFaAttribute()
+    {
+        $value = 'ناموجود';
+        if($this->available === 1)
+        {
+            $value = 'موجود';
+        }
+        return $value;
+    }
 }

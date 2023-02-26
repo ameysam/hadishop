@@ -29,6 +29,10 @@ class CreateProductsTable extends Migration
 
             $table->tinyInteger('suggest')->default(0);
 
+            $table->tinyInteger('available')->default(1);
+
+            $table->unsignedInteger('visit_count')->default(0);
+
             $table->timestamps();
             $table->softDeletes();
 

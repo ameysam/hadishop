@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Product\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
@@ -29,21 +30,29 @@ class ProductController extends Controller
 
     public function index()
     {
-        $records = Product::with('category')->latest('id')->paginate(2);
+        $categories = Category::latest('id')->get();
+        $records = Product::with('category')->orderAvailable()->latest('id')->paginate(12);
 
+        // return
         $data = [
+            'categories' => $categories,
             'records' => $records,
         ];
 
-        return view('products._self.admin.index', $data);
+        return view('products._self.front.index', $data);
     }
 
     public function show()
     {
+        $records = Product::whereCategory($this->record->category)->with('category')->orderAvailable()->inRandomOrder()->take(10)->get();
+
+        $this->record->increment('visit_count');
+
         $data = [
             'record' => $this->record,
+            'records' => $records,
         ];
 
-        return view('products._self.admin.show', $data);
+        return view('products._self.front.show', $data);
     }
 }

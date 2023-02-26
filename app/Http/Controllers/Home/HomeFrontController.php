@@ -19,9 +19,9 @@ class HomeFrontController extends Controller
         // return
         $products = Product::with('category', 'files')->latest('id')->get();
 
-        $products_latest = Product::with('category', 'files')->latest('id')->take(10)->get();
+        $products_latest = Product::with('category', 'files')->latest('id')->orderAvailable()->take(10)->get();
 
-        $products_suggest = Product::with('category', 'files')->whereSuggest()->latest('id')->take(8)->get();
+        $products_suggest = Product::with('category', 'files')->whereSuggest()->orderAvailable()->latest('id')->take(8)->get();
 
         // return
         $categories = Category::with([

@@ -2,7 +2,7 @@
     <ul class="mobile-menu">
         <li class="active">
             <a href="{{ route('front.home.index') }}">خانه<span class="mmenu-btn1"></span></a>
-            <a href="#">فهرست کالاها<span class="mmenu-btn1"></span></a>
+            <a href="{{ route('front.product.index') }}">فهرست کالاها<span class="mmenu-btn1"></span></a>
             <a href="#">درباره ما<span class="mmenu-btn1"></span></a>
             <a href="#">تماس با ما<span class="mmenu-btn1"></span></a>
         </li>

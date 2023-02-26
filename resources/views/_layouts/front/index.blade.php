@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('assets/front/bootstrap-rtl.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/front/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/front/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/front/nouislider.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/front/jquery.countdown.css')}}">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{ asset('assets/front/style.css')}}">
@@ -115,11 +116,11 @@
                 <div class="container">
 
                     @component('_layouts.front.components.categories')
-                        @slot('categories', $categories)
+                        @slot('categories', $_main_categories)
                     @endcomponent
 
                     @component('_layouts.front.components.menus')
-                        @slot('categories', $categories)
+                        @slot('categories', $_main_categories)
                     @endcomponent
 
 
@@ -269,7 +270,7 @@
                 </div><!-- .End .tab-pane -->
                 <div class="tab-pane fade" id="mobile-cats-tab" role="tabpanel" aria-labelledby="mobile-cats-link">
                     @component('_layouts.front.components.categories_mobile')
-                        @slot('categories', $categories)
+                        @slot('categories', $_main_categories)
                     @endcomponent
                 </div><!-- .End .tab-pane -->
             </div><!-- End .tab-content -->
