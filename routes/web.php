@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Home\HomeFrontController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Product\Front\ProductController;
+use App\Http\Controllers\Category\Front\CategoryController;
 use App\Http\Controllers\Province\Admin\ProvinceController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,10 @@ Route::prefix('')->name('front.')->group(function (){
     Route::prefix('products')->name('product.')->group(function (){
         Route::get('', [ProductController::class, 'index'])->name('index');
         Route::get('{id}/{title?}', [ProductController::class, 'show'])->name('show');
+    });
+
+    Route::prefix('categories')->name('category.')->group(function (){
+        Route::get('{id}/{title?}', [CategoryController::class, 'show'])->name('show');
     });
 
 

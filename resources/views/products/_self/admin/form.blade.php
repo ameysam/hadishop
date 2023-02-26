@@ -89,6 +89,7 @@
                                     @slot('title', 'وضعیت ویژه')
                                     @slot('id', 'special')
                                     @slot('star', true)
+                                    @slot('doesnt_have_default', true)
                                     @slot('options')
                                         <option value="0" {{ (isset($record) && $record->special !== 1) ? 'selected="selected"' : '' }}>معمولی</option>
                                         <option value="1" {{ (isset($record) && $record->special === 1) ? 'selected="selected"' : '' }}>ویژه</option>
@@ -100,9 +101,22 @@
                                     @slot('title', 'وضعیت پیشنهاد')
                                     @slot('id', 'suggest')
                                     @slot('star', true)
+                                    @slot('doesnt_have_default', true)
                                     @slot('options')
                                         <option value="0" {{ (isset($record) && $record->suggest !== 1) ? 'selected="selected"' : '' }}>پیشنهاد نشده</option>
                                         <option value="1" {{ (isset($record) && $record->suggest === 1) ? 'selected="selected"' : '' }}>پیشنهاد شده</option>
+                                    @endslot
+                                @endcomponent
+                            </div>
+                            <div class="col-12">
+                                @component('_components.admin.select.single')
+                                    @slot('title', 'موجودی')
+                                    @slot('id', 'available')
+                                    @slot('star', true)
+                                    @slot('doesnt_have_default', true)
+                                    @slot('options')
+                                        <option value="1" {{ (isset($record) && $record->available === 1) ? 'selected="selected"' : '' }}>موجود</option>
+                                        <option value="0" {{ (isset($record) && $record->available !== 1) ? 'selected="selected"' : '' }}>ناموجود</option>
                                     @endslot
                                 @endcomponent
                             </div>

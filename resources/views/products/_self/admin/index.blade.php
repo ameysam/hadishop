@@ -64,13 +64,29 @@
                         }
                     },
                     {
+                        field: 'visit_count', width: 60, sortable: true, title: 'بازدید', align: 'center',
+                        formatter: function (val, row) {
+                            return row.visit_count;
+                        }
+                    },
+                    {
+                        field: 'available', width: 100, sortable: true, title: 'موجودی', align: 'center',
+                        formatter: function (val, row) {
+                            if(row.available == 1)
+                            {
+                                return '<span class="text-success">'+row.available_farsi+'</span>';
+                            }
+                            return '<span class="text-danger">'+row.available_farsi+'</span>';
+                        }
+                    },
+                    {
                         field: 'special', width: 100, sortable: true, title: 'ویژه', align: 'center',
                         formatter: function (val, row) {
                             if(row.special == 1)
                             {
                                 return '<span class="text-success">'+row.special_farsi+'</span>';
                             }
-                            return '<span class="text-danger">'+row.special_farsi+'</span>';
+                            return '<span class="text-primary">'+row.special_farsi+'</span>';
                         }
                     },
                     {

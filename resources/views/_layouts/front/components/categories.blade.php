@@ -8,7 +8,7 @@
             <nav class="side-nav">
                 <ul class="menu-vertical sf-arrows sf-js-enabled" style="touch-action: pan-y;">
                     @foreach ($categories as $item)
-                    <li class="item-lead"><a href="#">{{ $item->name }}</a></li>
+                    <li class="item-lead"><a href="{{ $item->urlShow() }}">{{ $item->name }}</a></li>
                     {{-- <li><a href="#">تخت خواب</a></li> --}}
                     @endforeach
                 </ul><!-- End .menu-vertical -->

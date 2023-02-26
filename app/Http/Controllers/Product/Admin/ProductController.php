@@ -80,6 +80,7 @@ class ProductController extends Controller
             $item->price_fa = number_format($item->price);
             $item->suggest_farsi = $item->suggest_fa;
             $item->special_farsi = $item->special_fa;
+            $item->available_farsi = $item->available_fa;
             $item->created_at_farsi = jdate($item->created_at)->format('Y/m/d');
         });
 

@@ -80,7 +80,7 @@
 
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: {{ $record->visit_count * 5 }}%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: {{ $record->visit_count }}%;"></div><!-- End .ratings-val -->
                                 </div><!-- End .ratings -->
                                 {{-- <a class="ratings-text" href="#product-review-link" id="review-link">( 2 نظر
                                     )</a> --}}

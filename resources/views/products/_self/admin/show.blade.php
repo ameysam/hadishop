@@ -65,6 +65,14 @@
                                 <td class="text-center">{{ $record['category']['name'] ?? '' }}</td>
                             </tr>
                             <tr>
+                                <th class="text-center">تعداد بازدید</th>
+                                <td class="text-center">{{ $record->visit_count ?? 0 }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">موجودی</th>
+                                <td class="text-center">{{ $record->available_fa ?? '' }}</td>
+                            </tr>
+                            <tr>
                                 <th class="text-center">وضعیت ویژه</th>
                                 <td class="text-center">{{ $record->special_fa ?? '' }}</td>
                             </tr>

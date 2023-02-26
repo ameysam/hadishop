@@ -121,7 +121,7 @@
 
                 @foreach ($categories as $item)
                 <div class="col-6 col-sm-4 col-lg-2">
-                        <a href="#" class="cat-block">
+                        <a href="{{ $item->urlShow() }}" class="cat-block">
                             <figure>
                                 <span>
                                     <img src="{{ $item->file_path }}" alt="{{$item->name}}">
@@ -140,7 +140,7 @@
     <div class="mb-4"></div><!-- End .mb-4 -->
 
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content">
             <div class="col-md-6 col-lg-4">
                 <div class="banner banner-overlay banner-overlay-light">
                     <a href="#">
@@ -200,7 +200,7 @@
             </div><!-- End .heading-left -->
 
             <div class="heading-right">
-                <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
+                <ul class="nav nav-pills nav-border-anim justify-content" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="new-all-link" data-toggle="tab" href="#new-all-tab" role="tab" aria-controls="new-all-tab" aria-selected="true">همه</a>
                     </li>
@@ -305,7 +305,7 @@
                             </div><!-- End .product-price -->
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: {{$product->visit_count*5}}%;"></div>
+                                    <div class="ratings-val" style="width: {{$product->visit_count}}%;"></div>
                                     <!-- End .ratings-val -->
                                 </div><!-- End .ratings -->
                                 <span class="ratings-text">( {{$product->visit_count}} بازدید )</span>
@@ -388,7 +388,7 @@
                                     </div><!-- End .product-price -->
                                     <div class="ratings-container">
                                         <div class="ratings">
-                                            <div class="ratings-val" style="width: {{$product->visit_count*5}}%;"></div><!-- End .ratings-val -->
+                                            <div class="ratings-val" style="width: {{$product->visit_count}}%;"></div><!-- End .ratings-val -->
                                         </div><!-- End .ratings -->
                                         <span class="ratings-text">( {{$product->visit_count}} بازدید )</span>
                                     </div><!-- End .rating-container -->
@@ -632,7 +632,7 @@
                                                 </div><!-- End .product-price -->
                                                 <div class="ratings-container">
                                                     <div class="ratings">
-                                                        <div class="ratings-val" style="width: {{ $item->visit_count * 5 }}%;"></div>
+                                                        <div class="ratings-val" style="width: {{ $item->visit_count }}%;"></div>
                                                         <!-- End .ratings-val -->
                                                     </div><!-- End .ratings -->
                                                     <span class="ratings-text">( {{ $item->visit_count }} دیدگاه )</span>
@@ -667,7 +667,7 @@
         </div><!-- End .heading -->
 
         <div class="products">
-            <div class="row justify-content-center">
+            <div class="row justify-content">
 
                 @foreach ($products_suggest as $item)
                 <div class="col-6 col-md-4 col-lg-3">
@@ -710,7 +710,7 @@
                             </div><!-- End .product-price -->
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: {{$item->visit_count*5}}%;"></div><!-- End .ratings-val -->
+                                    <div class="ratings-val" style="width: {{$item->visit_count}}%;"></div><!-- End .ratings-val -->
                                 </div><!-- End .ratings -->
                                 <span class="ratings-text">( {{$item->visit_count}} دیدگاه )</span>
                             </div><!-- End .rating-container -->

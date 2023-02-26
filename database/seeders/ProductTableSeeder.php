@@ -210,7 +210,7 @@ class ProductTableSeeder extends Seeder
         foreach($products as $record){
             $file = $record['file'];
             $record['available'] = $counter % 5 == 0 ? 0 : 1;
-            $record['visit_count'] = 0;
+            $record['visit_count'] = rand(10, 50);
             $counter++;
             unset($record['file']);
             $product = Product::create($record);
