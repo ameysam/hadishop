@@ -28,10 +28,21 @@ class ProductController extends Controller
         }
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::latest('id')->get();
-        $records = Product::with('category')->orderAvailable()->latest('id')->paginate(12);
+
+
+
+        $query = Product::with('category');
+
+        $phrase = $request->query('q');
+        if($phrase)
+        {
+            $query->search($phrase);
+        }
+
+        $records = $query->orderAvailable()->latest('id')->paginate(12);
 
         // return
         $data = [
@@ -41,6 +52,7 @@ class ProductController extends Controller
 
         return view('products._self.front.index', $data);
     }
+
 
     public function show()
     {

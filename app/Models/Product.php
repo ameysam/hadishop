@@ -20,4 +20,10 @@ class Product extends Model
         ProductRelationTrait,
         ProductAccessorTrait
         ;
+
+
+    protected $searchable = [
+        'name',
+        'description',
+    ];
 }
