@@ -12,16 +12,16 @@
                 class="product-image">
         </a>
 
-        {{-- <div class="product-action-vertical">
+        <div class="product-action-vertical">
+            <a target="_blank" href="{{ $item->urlShow() }}"
+                class="btn-product-icon btn-quickview btn-expandable"
+                title="مشاهده سریع محصول"><span>مشاهده</span></a>
             <a href="#"
-                class="btn-product-icon btn-wishlist btn-expandable"><span>افزودن
+                class="btn-product-icon btn-wishlist btn-expandable1"><span>افزودن
                     به لیست علاقه مندی</span></a>
-            <a href="popup/quickView.html"
-                class="btn-product-icon btn-quickview"
-                title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-            <a href="#" class="btn-product-icon btn-compare"
+            <a href="#" class="btn-product-icon btn-compare btn-expandable1"
                 title="مقایسه"><span>مقایسه</span></a>
-        </div><!-- End .product-action-vertical --> --}}
+        </div><!-- End .product-action-vertical -->
 
         {{-- <div class="product-action">
             <a href="#" class="btn-product btn-cart"><span>افزودن به

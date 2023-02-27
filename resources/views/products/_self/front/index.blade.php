@@ -4,7 +4,11 @@
 
     <div class="page-header text-center" style="background-image: url('{{ asset("assets/front/images/page-header-bg.jpg") }}')">
         <div class="container">
-            <h1 class="page-title">کالاها<span></span></h1>
+            @if(app('request')->input('q'))
+            <h1 class="page-title">نتایج جستجو «{{ app('request')->input('q') }}»<span></span></h1>
+            @else
+            <h1 class="page-title">فهرست کالاها<span></span></h1>
+            @endif
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
@@ -19,7 +23,7 @@
     <div class="page-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="toolbox">
                         {{-- <div class="toolbox-left">
                             <div class="toolbox-info">
@@ -43,14 +47,19 @@
 
                     <div class="products mb-3">
                         <div class="row justify-content">
-                            @foreach ($records as $item)
+                            @forelse ($records as $item)
                                 <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                                     @component('products._self.front.item')
                                         @slot('item', $item)
                                     @endcomponent
                                 </div>
-                            @endforeach
-
+                            @empty
+                                <div class="col-12 justify-content-center text-danger font-weight-bold">
+                                    <span class="">
+                                        موردی یافت نشد.
+                                    </span>
+                                </div>
+                            @endforelse
                         </div><!-- End .row -->
                     </div><!-- End .products -->
 
@@ -81,7 +90,8 @@
                         </ul>
                     </nav> --}}
                 </div><!-- End .col-lg-9 -->
-                <aside class="col-lg-3 order-lg-first">
+
+                {{-- <aside class="col-lg-3 order-lg-first">
                     <div class="sidebar sidebar-shop">
                         <div class="widget widget-clean">
                             <label>فیلترها : </label>
@@ -105,7 +115,6 @@
                                                     <input type="checkbox" class="custom-control-input" id="cat-{{ $item->id }}">
                                                     <label class="custom-control-label" for="cat-{{ $item->id }}">{{ $item->name }}</label>
                                                 </div><!-- End .custom-checkbox -->
-                                                {{-- <span class="item-count">3</span> --}}
                                             </div><!-- End .filter-item -->
                                         @endforeach
                                     </div><!-- End .filter-items -->
@@ -135,8 +144,10 @@
                                 </div><!-- End .widget-body -->
                             </div><!-- End .collapse -->
                         </div><!-- End .widget -->
+
+                        <a href="#" style="width:100%" class="btn btn-success">اعمال فیلتر</a>
                     </div><!-- End .sidebar sidebar-shop -->
-                </aside><!-- End .col-lg-3 -->
+                </aside><!-- End .col-lg-3 --> --}}
             </div><!-- End .row -->
         </div><!-- End .container -->
     </div><!-- End .page-content -->

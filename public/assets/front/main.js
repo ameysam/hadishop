@@ -67,7 +67,7 @@ $(document).ready(function () {
     });
 
 
-    // Sticky header 
+    // Sticky header
     var catDropdown = $('.category-dropdown'),
         catInitVal = catDropdown.data('visible');
 
@@ -246,7 +246,7 @@ $(document).ready(function () {
 
             var newDate;
 
-            // Split and created again for ie and edge 
+            // Split and created again for ie and edge
             if (!$this.data('relative')) {
                 var untilDateArr = untilDate.split(", "), // data-until 2019, 10, 8 - yy,mm,dd
                     newDate = new Date(untilDateArr[0], untilDateArr[1] - 1, untilDateArr[2]);
@@ -367,7 +367,7 @@ $(document).ready(function () {
         });
     }
 
-    // Product Gallery - product-gallery.html 
+    // Product Gallery - product-gallery.html
     if ($.fn.owlCarousel && $.fn.elevateZoom) {
         var owlProductGallery = $('.product-gallery-carousel');
 
@@ -422,7 +422,7 @@ $(document).ready(function () {
         });
     }
 
-    // Product Gallery Separeted- product-sticky.html 
+    // Product Gallery Separeted- product-sticky.html
     if ($.fn.elevateZoom) {
         $('.product-separated-item').find('img').elevateZoom({
             zoomType: "inner",
@@ -713,7 +713,7 @@ $(document).ready(function () {
     });
 
     // Product quickView popup
-    $('.btn-quickview').on('click', function (e) {
+    $('.btn-quickview1').on('click', function (e) {
         var ajaxUrl = $(this).attr('href');
         if ($.fn.magnificPopup) {
             setTimeout(function () {
