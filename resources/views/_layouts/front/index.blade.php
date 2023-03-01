@@ -148,7 +148,7 @@
                                         تخفیف 20 هزار تومانی</span> برای اولین خرید</p><!-- End .cta-desc -->
                             </div><!-- End .text-center -->
 
-                            <form action="#">
+                            <form action="">
                                 <div class="input-group input-group-round">
                                     <input type="email" class="form-control form-control-white" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="Email Adress" required="">
                                     <div class="input-group-append">
@@ -163,7 +163,7 @@
             <div class="footer-middle">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-12 col-lg-6">
                             <div class="widget widget-about">
                                 <img src="{{ asset('assets/front/logo-footer.png')}}" class="footer-logo" alt="Footer Logo" width="105" height="25">
                                 <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی
@@ -177,7 +177,7 @@
                             </div><!-- End .widget about-widget -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
 
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-12 col-lg-6">
                             <div class="widget">
                                 <h4 class="widget-title">لینک های مفید</h4><!-- End .widget-title -->
 
@@ -185,13 +185,13 @@
                                     <li><a href="{{ route('front.about-us.index') }}">درباره ما</a></li>
                                     <li><a href="#">خدمات</a></li>
                                     <li><a href="#">نحوه خرید</a></li>
-                                    <li><a href="https://filenter.ir/molla/faq.html">سوالات متداول</a></li>
-                                    <li><a href="https://filenter.ir/molla/contact.html">تماس با ما</a></li>
+                                    {{-- <li><a href="https://filenter.ir/molla/faq.html">سوالات متداول</a></li> --}}
+                                    <li><a href="{{ route('front.contact-us.index') }}">تماس با ما</a></li>
                                 </ul><!-- End .widget-list -->
                             </div><!-- End .widget -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
 
-                        <div class="col-sm-6 col-lg-3">
+                        {{-- <div class="col-sm-6 col-lg-3">
                             <div class="widget">
                                 <h4 class="widget-title">خدمات مشتری</h4><!-- End .widget-title -->
 
@@ -217,7 +217,7 @@
                                     <li><a href="#">راهنما</a></li>
                                 </ul><!-- End .widget-list -->
                             </div><!-- End .widget -->
-                        </div><!-- End .col-sm-6 col-lg-3 -->
+                        </div><!-- End .col-sm-6 col-lg-3 --> --}}
                     </div><!-- End .row -->
                 </div><!-- End .container -->
             </div><!-- End .footer-middle -->
@@ -248,9 +248,9 @@
         <div class="mobile-menu-wrapper">
             <span class="mobile-menu-close"><i class="icon-close"></i></span>
 
-            <form action="#" method="get" class="mobile-search">
+            <form action="{{ route('front.product.index') }}" method="get" class="mobile-search">
                 <label for="mobile-search" class="sr-only">جستجو</label>
-                <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="جستجو در ..." required="">
+                <input type="search" class="form-control" name="q" id="mobile-search" placeholder="جستجو در ..." value="{{ app('request')->input('q') }}">
                 <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
             </form>
 

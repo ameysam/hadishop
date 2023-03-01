@@ -7,6 +7,7 @@ use App\Http\Controllers\Home\HomeFrontController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Product\Front\ProductController;
 use App\Http\Controllers\Category\Front\CategoryController;
+use App\Http\Controllers\ContactUs\ContactUsController;
 use App\Http\Controllers\Province\Admin\ProvinceController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,9 @@ Route::prefix('')->name('front.')->group(function (){
 
     Route::prefix('about-us')->name('about-us.')->group(function (){
         Route::get('', [AboutUsController::class, 'index'])->name('index');
+    });
+    Route::prefix('contact-us')->name('contact-us.')->group(function (){
+        Route::get('', [ContactUsController::class, 'index'])->name('index');
     });
 
 

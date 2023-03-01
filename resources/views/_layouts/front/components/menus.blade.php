@@ -11,7 +11,7 @@
                 <a href="{{ route('front.about-us.index') }}" class="sf-with-ul1">درباره ما</a>
             </li>
             <li class="megamenu-container">
-                <a href="#" class="sf-with-ul1">تماس با ما</a>
+                <a href="{{ route('front.contact-us.index') }}" class="sf-with-ul1">تماس با ما</a>
             </li>
         </ul><!-- End .menu -->
     </nav><!-- End .main-nav -->
