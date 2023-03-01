@@ -44,37 +44,37 @@
 
                     <div class="header-right">
 
-                        <ul class="top-menu">
+                        {{-- <ul class="top-menu">
                             <li>
                                 <a href="#">لینک ها</a>
                                 <ul>
                                     <li>
                                         <div class="header-dropdown">
-                                            {{-- <a href="#">تومان</a>
+                                            <a href="#">تومان</a>
                                             <div class="header-menu">
                                                 <ul>
                                                     <li><a href="#">دلار</a></li>
                                                     <li><a href="#">تومان</a></li>
                                                 </ul>
-                                            </div><!-- End .header-menu --> --}}
+                                            </div><!-- End .header-menu -->
                                         </div>
                                     </li>
                                     <li>
                                         <div class="header-dropdown">
-                                            {{-- <a href="#">فارسی</a>
+                                            <a href="#">فارسی</a>
                                             <div class="header-menu">
                                                 <ul>
                                                     <li><a href="#">انگلیسی</a></li>
                                                     <li><a href="#">فرانسوی</a></li>
                                                     <li><a href="#">ترکی استانبولی</a></li>
                                                 </ul>
-                                            </div><!-- End .header-menu --> --}}
+                                            </div><!-- End .header-menu -->
                                         </div><!-- End .header-dropdown -->
                                     </li>
-                                    {{-- <li><a href="#signin-modal" data-toggle="modal">ورود / ثبت نام</a></li> --}}
+                                    <li><a href="#signin-modal" data-toggle="modal">ورود / ثبت نام</a></li>
                                 </ul>
                             </li>
-                        </ul><!-- End .top-menu -->
+                        </ul><!-- End .top-menu --> --}}
                     </div><!-- End .header-right -->
 
                 </div><!-- End .container -->
@@ -182,7 +182,7 @@
                                 <h4 class="widget-title">لینک های مفید</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
-                                    <li><a href="https://filenter.ir/molla/about.html">درباره ما</a></li>
+                                    <li><a href="{{ route('front.about-us.index') }}">درباره ما</a></li>
                                     <li><a href="#">خدمات</a></li>
                                     <li><a href="#">نحوه خرید</a></li>
                                     <li><a href="https://filenter.ir/molla/faq.html">سوالات متداول</a></li>

@@ -26,7 +26,7 @@ class SlidersTableSeeder extends Seeder
                 'file' => 'assets/front/images/slide-1.png',
             ],
             [
-                'name' => 'هدفون‌های جدید با کیفیت صوتی بالا',
+                'name' => 'هدفون‌های جدید',
                 'link' => 'https://www.google.com',
                 'file' => 'assets/front/images/slide-2.png',
             ],

@@ -8,7 +8,7 @@
                 <a href="{{ route('front.product.index') }}" class="sf-with-ul1">فهرست کالاها</a>
             </li>
             <li class="megamenu-container">
-                <a href="#" class="sf-with-ul1">درباره ما</a>
+                <a href="{{ route('front.about-us.index') }}" class="sf-with-ul1">درباره ما</a>
             </li>
             <li class="megamenu-container">
                 <a href="#" class="sf-with-ul1">تماس با ما</a>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUs\AboutUsController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Home\HomeFrontController;
@@ -32,6 +33,10 @@ Route::prefix('')->name('front.')->group(function (){
 
     Route::prefix('categories')->name('category.')->group(function (){
         Route::get('{id}/{title?}', [CategoryController::class, 'show'])->name('show');
+    });
+
+    Route::prefix('about-us')->name('about-us.')->group(function (){
+        Route::get('', [AboutUsController::class, 'index'])->name('index');
     });
 
 
