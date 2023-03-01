@@ -2,6 +2,12 @@
 
 @section('content')
 
+    <div class="page-header text-center" style="background-image: url('{{ asset("assets/front/images/page-header-bg.jpg") }}')">
+        <div class="container">
+            <h1 class="page-title"><span></span></h1>
+        </div><!-- End .container -->
+    </div><!-- End .page-header -->
+
     <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
         <div class="container d-flex align-items-center">
             <ol class="breadcrumb">
@@ -28,7 +34,7 @@
         <div class="container">
             <div class="product-details-top">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="product-gallery product-gallery-vertical">
                             <div class="row">
                                 <figure class="product-main-image">
@@ -36,9 +42,9 @@
                                         data-zoom-image="{{ $record->file_path }}"
                                         alt="{{ $record->name }}">
 
-                                    <a href="#" id="btn-product-gallery" class="btn-product-gallery">
+                                    {{-- <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                         <i class="icon-arrows"></i>
-                                    </a>
+                                    </a> --}}
                                 </figure><!-- End .product-main-image -->
 
                                 {{-- <div id="product-zoom-gallery" class="product-image-gallery">
@@ -119,7 +125,7 @@
                                 {{ $record->visit_count }}
                             </div><!-- End .details-filter-row -->
 
-                            <div style="visibility: hidden" class="details-filter-row details-row-size">
+                            {{-- <div style="visibility: hidden" class="details-filter-row details-row-size">
                                 <label for="size">سایز : </label>
                                 <div class="select-custom">
                                     <select name="size" id="size" class="form-control">
@@ -153,12 +159,12 @@
                                     <a href="#" class="btn-product btn-compare" title="مقایسه"><span>افزودن به
                                             لیست مقایسه</span></a>
                                 </div><!-- End .details-action-wrapper -->
-                            </div><!-- End .product-details-action -->
+                            </div><!-- End .product-details-action --> --}}
 
                             <div class="product-details-footer">
                                 <div class="product-cat text-center">
                                     <span>دسته بندی : </span>
-                                    <a href="#">{{ $record->category->name ?? '' }}</a>
+                                    <a href="{{ $record->category->urlShow() }}">{{ $record->category->name ?? '' }}</a>
                                 </div><!-- End .product-cat -->
 
                                 <div class="social-icons social-icons-sm">

@@ -184,7 +184,7 @@
                                 <ul class="widget-list">
                                     <li><a href="{{ route('front.about-us.index') }}">درباره ما</a></li>
                                     <li><a href="#">خدمات</a></li>
-                                    <li><a href="#">نحوه خرید</a></li>
+                                    {{-- <li><a href="#">نحوه خرید</a></li> --}}
                                     {{-- <li><a href="https://filenter.ir/molla/faq.html">سوالات متداول</a></li> --}}
                                     <li><a href="{{ route('front.contact-us.index') }}">تماس با ما</a></li>
                                 </ul><!-- End .widget-list -->

@@ -31,7 +31,7 @@
 
     <div class="product-body">
         <div class="product-cat text-center">
-            <a href="#">{{ $item->category->name ?? '' }}</a>
+            <a href="{{ $item->category->urlShow() }}">{{ $item->category->name ?? '' }}</a>
         </div><!-- End .product-cat -->
         <h3 class="product-title text-center"><a href="{{ $item->urlShow() }}">{{ $item->name }}</a></h3><!-- End .product-title -->
         <div class="product-price">

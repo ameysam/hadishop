@@ -296,7 +296,7 @@
 
                         <div class="product-body">
                             <div class="product-cat">
-                                <a href="#">{{$product->category->name ?? ''}}</a>
+                                <a href="{{ $product->category->urlShow() }}">{{$product->category->name ?? ''}}</a>
                             </div><!-- End .product-cat -->
                             <h3 class="product-title"><a href="{{ $product->urlShow() }}">{{$product->name}}</a>
                             </h3><!-- End .product-title -->
@@ -378,7 +378,7 @@
 
                                 <div class="product-body">
                                     <div class="product-cat">
-                                        <a href="#">{{$item->name}}</a>
+                                        <a href="{{ $item->urlShow() }}">{{$item->name}}</a>
                                     </div><!-- End .product-cat -->
                                     <h3 class="product-title"><a href="{{ $product->urlShow() }}">
                                         {{$product->name}}
@@ -624,7 +624,7 @@
 
                                             <div class="product-body">
                                                 <div class="product-cat">
-                                                    <a href="#">{{ $item->category->name ?? '' }}</a>
+                                                    <a href="{{ $item->category->urlShow() }}">{{ $item->category->name ?? '' }}</a>
                                                 </div><!-- End .product-cat -->
                                                 <h3 class="product-title"><a href="{{ $item->urlShow() }}">{{ $item->name }}</a></h3><!-- End .product-title -->
                                                 <div class="product-price">
@@ -701,7 +701,7 @@
 
                         <div class="product-body">
                             <div class="product-cat">
-                                <a href="#">{{ $item->category->name ?? '' }}</a>
+                                <a href="{{ $item->category->urlShow() }}">{{ $item->category->name ?? '' }}</a>
                             </div><!-- End .product-cat -->
                             <h3 class="product-title"><a href="{{ $item->urlShow() }}">{{ $item->name }} </a></h3>
                             <!-- End .product-title -->

@@ -31,7 +31,7 @@
                             </div><!-- End .toolbox-info -->
                         </div><!-- End .toolbox-left --> --}}
 
-                        <div class="toolbox-right">
+                        {{-- <div class="toolbox-right">
                             <div class="toolbox-sort">
                                 <label for="sortby">مرتب سازی براساس : </label>
                                 <div class="select-custom">
@@ -42,7 +42,7 @@
                                     </select>
                                 </div>
                             </div><!-- End .toolbox-sort -->
-                        </div><!-- End .toolbox-right -->
+                        </div><!-- End .toolbox-right --> --}}
                     </div><!-- End .toolbox -->
 
                     <div class="products mb-3">
